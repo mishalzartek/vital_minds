@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>258297101973-h2nogprfvc4ct2adcn1toq87njh8h7kr.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.258297101973-h2nogprfvc4ct2adcn1toq87njh8h7kr</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>258297101973-0nscjcv3tp6joje8n8p5meh8p51nkrf1.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBa9JRP6PEh5GTjLbKB_cFdJoYnq6E9Tl4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>258297101973</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.pyramid.vitalminds</string>
+	<key>PROJECT_ID</key>
+	<string>vitalminds-pyramid</string>
+	<key>STORAGE_BUCKET</key>
+	<string>vitalminds-pyramid.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:258297101973:ios:627b0ebfe8789656d9659c</string>
+</dict>
+</plist>

@@ -1,0 +1,134 @@
+{
+  "project_info": {
+    "project_number": "258297101973",
+    "project_id": "vitalminds-pyramid",
+    "storage_bucket": "vitalminds-pyramid.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:258297101973:android:81bf751e103df295d9659c",
+        "android_client_info": {
+          "package_name": "com.pyramid.vitalminds"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "258297101973-0nscjcv3tp6joje8n8p5meh8p51nkrf1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pyramid.vitalminds",
+            "certificate_hash": "27723fbd6e10f51cf28287892bc41d859e692a73"
+          }
+        },
+        {
+          "client_id": "258297101973-32bkca21gv03arb03p5feupsknldkldd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pyramid.vitalminds",
+            "certificate_hash": "8b045abda06c8a0995b6f0a5602163a5aa7ed547"
+          }
+        },
+        {
+          "client_id": "258297101973-7hkgcd8lhdtgnp4ioqrecb1rgtktmdn7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pyramid.vitalminds",
+            "certificate_hash": "e32a22b6af3c3987bc043c73b1f4e3bc697bac2b"
+          }
+        },
+        {
+          "client_id": "258297101973-bsqq7016ikrb4n3f0vviijm129imdpvd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pyramid.vitalminds",
+            "certificate_hash": "d8e76290db3ad105d6edb3efd549f660b283f661"
+          }
+        },
+        {
+          "client_id": "258297101973-dm1eis0ti2357li1gl47cuoecgkrghlt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pyramid.vitalminds",
+            "certificate_hash": "7dfacda705e340dc7d779baa5c10c076c4002f34"
+          }
+        },
+        {
+          "client_id": "258297101973-h91ci4b3cou4euc77ru3iot234hbj1hb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pyramid.vitalminds",
+            "certificate_hash": "c805dd9431be1a76c7ce037e75a264ebea6dcc5e"
+          }
+        },
+        {
+          "client_id": "258297101973-kb89othdrvu7a1fc2g7jt3pjlnlj3nm9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pyramid.vitalminds",
+            "certificate_hash": "70040b4ff619b09d152f609ad9e5d2a0fb8e3797"
+          }
+        },
+        {
+          "client_id": "258297101973-kpbpbek2h1thiagqj1o0egto5hk89tbi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pyramid.vitalminds",
+            "certificate_hash": "4d92cc86dad05ce5a359b10352c9fd167f343c19"
+          }
+        },
+        {
+          "client_id": "258297101973-m2gi4choni0afohu03gttius2fiicg4q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pyramid.vitalminds",
+            "certificate_hash": "c02d073084a16b7d6edfbe6bdf6764623b08f2a0"
+          }
+        },
+        {
+          "client_id": "258297101973-nfvd7qmsttushdn1qln2o20ihengc2hl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pyramid.vitalminds",
+            "certificate_hash": "f58b60f00ba2cac0a076fecea49598c718d5d50a"
+          }
+        },
+        {
+          "client_id": "258297101973-tomt4jjv37dni107i9e29fgvpcvb206t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pyramid.vitalminds",
+            "certificate_hash": "0808be61bbfeb345c789354e5b8b397b659f8b7e"
+          }
+        },
+        {
+          "client_id": "258297101973-636ork28a4l99sk4ue51136i7572tohj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLi9GiRZUQOo13WdQWPFp0PZhwPF4G-Cg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "258297101973-636ork28a4l99sk4ue51136i7572tohj.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "258297101973-h2nogprfvc4ct2adcn1toq87njh8h7kr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.pyramid.vitalminds"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

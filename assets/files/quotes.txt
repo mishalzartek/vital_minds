@@ -1,0 +1,101 @@
+1.	"To a mind that is still, the entire universe surrenders" - Zhuang Zhou
+2.	"The only true wisdom is in knowing you know nothing" - Socrates
+3.	"Silence is the language of God, all else is poor translation" Rumi
+4.	"If people never did silly things nothing intelligent would ever get done" – Ludwig Wittgenstein
+5.	"Judge a man by his questions rather than by his answers" - Voltaire
+6.	"The hardest thing to learn in life is which bridge to cross and which bridge to burn" - Bertrand Russel
+7.	"To know what life is worth, you have to risk it once in a while" - Jean-Paul Satre
+8.	"It may seem difficult at first, but everything is difficult at first" - Miyamoto Musashi
+9.	"I prefer liberty with danger than peace with slavery" - Jean-Jacques Rousseau
+10.	"We suffer more in imagination than in reality" - Seneca
+11.	"The whole future lies in uncertainty: live immediately" - Seneca
+12.	"The rarest of all human qualities is consistency" - Jeremy Bentham
+13.	"Wherever you go, go with all your heart" - Confucius
+14.	"Of all the paths you take in life, make sure a few of them are dirt" - John Muir
+15.	"People who know little are usually great talkers, while men who know much say little" - Jean Jacques Rousseau
+16.	"There are a thousand ways to wealth, but only one way to heaven" - John Locke
+17.	"What is now proved was once only imagined" - William Blake
+18.	"the secret of happiness, you see, is not found in seeking more, but in developing the capacity to enjoy less" - Socrates
+19.	"Do not feel lonely, the entire universe is inside you" - Rumi
+20.	"What is to give light must endure burning" - Viktor Frankl
+21.	"Life is not a problem to be solved, but a reality to be experienced" -  Søren Kierkegaard
+22.	"In the midst of chaos, there is also opportunity." - Sun Tzu
+23.	"Circumstances don't make the man, they only reveal him to himself."  - Epictetus
+24.	"If it is not right, do not do it, if it is not true, do not say it." - Marcus Aurelius
+25.	"A truth that's told with bad intent beats all the lies you can invent." - William Blake
+26.	"In the depth of winter, I finally learned that within me there lay an invincible summer."- Albert Camus
+27.	"Think lightly of yourself and deeply of the world." - Miyamoto Musashi
+28.	"Man conquers the world by conquering himself." - Zeno
+29.	"How small a thought it takes to fill a life." - Ludwig Wittgenstein
+30.	"It is not the length of life, but the depth." - Ralph Waldo Emerson
+31.	"Our greatest glory is not in never falling, but in rising every time we fall." - Confucius
+32.	"Always do what you are afraid to do." - Ralph Waldo Emerson
+33.	"Sweat more during peace: bleed less during war." - Sun Tzu
+34.	"An intellectual is someone whose mind watches itself." - Albert Camus
+35.	"You are not a drop in the ocean. You are the entire ocean, in a drop." – Rumi
+36.	"You have power over your mind - not outside events. Realize this, and you will find strength." - Marcus Aurelius
+37.	"Raise your words, not voice. It is rain that grows flowers, not thunder." - Rumi
+38.	"Every man is guilty of all the good he did not do." - Voltaire
+39.	"Opportunities multiply as they are seized." - Sun Tzu
+40.	"What worries you, masters you." - John Locke
+41.	"The oldest, shortest words "yes" and "no" are those which require the most thought." - Pythagoras
+42.	"Science is organized knowledge. Wisdom is organized life." - Immanuel Kant
+43.	"Life can only be understood backwards; but it must be lived forwards." - Søren Kierkegaard
+44.	"Luck is what happens when preparation meets opportunity" - Seneca
+45.	"Yesterday I was clever, so I wanted to change the world. Today I am wise, so I am changing myself." - Rumi
+46.	"You become what you give your attention to." - Epictetus
+47.	"You become what you give your attention to." - Epictetus
+48.	"A sign of intelligence is an awareness of one’s own ignorance." – Niccolò Machiavelli
+49.	"To get what you love, you must first be patient with what you hate." – Al-Ghazali
+50.	"Wherever there is a human being, there is an opportunity for a kindness." – Seneca
+51.	"The world of reality has its limits; the world of imagination is boundless." – Jean-Jacques Rousseau
+52.	"All cruelty springs from weakness." – Seneca
+53.	"Do nothing which is of no use." – Miyamoto Musashi
+54.	"The key is to keep company only with people who uplift you, whose presence calls forth your best." – Epictetus
+55.	"Whosoever desires constant success must change his conduct with the times." – Niccolò Machiavelli
+56.	"He will win who knows when to fight and when not to fight." – Sun Tzu
+57.	"External things are not the problem. It's your assessment of them. Which you can erase right now." – Marcus Aurelius
+58.	"The road up and the road down is one and the same." – Heraclitus
+59.	"To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment." – Ralph Waldo Emerson
+60.	"Receive without pride, let go without attachment." – Marcus Aurelius
+61.	"I am not this hair, I am not this skin, I am the soul that lives within." – Rumi
+62.	"Love truth, but pardon error." – Voltaire
+63.	"Always remember you are braver than you believe, stronger than you seem, smarter than you think and twice as beautiful as you’d ever imagined." – Rumi
+64.	"What lies behind us and what lies before us are tiny matters compared to what lies within us." – Ralph Waldo Emerson
+65.	"Life is never made unbearable by circumstances, but only by lack of meaning and purpose." – Viktor Frank
+66.	"To find fault is easy; to do better may be difficult." – Plutarch
+67.	"Much learning does not teach understanding." – Heraclitus
+68.	"It does not matter how slowly you go so long as you do not stop." – Confucius
+69.	"The greatest minds are capable of the greatest vices as well as of the greatest virtues."– René Descartes
+70.	"It is impossible for a man to learn what he thinks he already knows." – Epictetus
+71.	"The longer we dwell on our misfortunes, the greater is their power to harm us." – Voltaire
+72.	"Always go too far, because that’s where you’ll find the truth." – Albert Camus
+73.	"Never was anything great achieved without danger." – Niccolò Machiavelli
+74.	"But there is no reason to live and no limit to our miseries if we let our fears predominate." – Seneca
+75.	"You must understand that there is more than one path to the top of the mountain." – Miyamoto Musashi
+76.	"Be silent or let thy words be worth more than silence." – Pythagoras
+77.	"It is not enough to have a good mind; the main thing is to use it well."– René Descartes
+78.	"Trouble is the common denominator of living. It is the great equalizer." – Søren Kierkegaard
+79.	"Great deeds are usually wrought at great risks." – Herodotus
+80.	"Knowing yourself is the beginning of all wisdom." – Aristotle
+81.	"A superior man is modest in his speech but exceeds in his actions." – Confucius
+82.	"Gratitude is the wine for the soul. Go on. Get drunk." – Rumi
+83.	"Appear weak when you are strong, and strong when you are weak." – Sun Tzu
+84.	"The most common form of despair is not being who you are." – Søren Kierkegaard
+85.	"It is not because things are difficult that we do not dare, it is because we do not dare that they are difficult." – Seneca
+86.	"If you want to achieve something, you build the basis for it." – Noam Chomsky
+87.	"What you seek is seeking you." – Rumi
+88.	"Do battle with yourself: if you have the will to conquer anger, it cannot conquer you." – Seneca
+89.	"To know what life is worth you have to risk it once in a while." – Jean-Paul Sartre
+90.	"Ignore those that make you fearful and sad, that degrade you back towards disease and death." – Rumi
+91.	"He who knows that enough is enough will always have enough." – Lao Tzu
+92.	"You were born with wings, why prefer to crawl through life?" – Rumi
+93.	"How long are you going to wait before you demand the best for yourself?" – Epictetus
+94.	"Always do what you are afraid to do." – Ralph Waldo Emerson
+95.	"I cannot remember the books I've read any more than the meals I have eaten; even so, they have made me." – Ralph Waldo Emerson
+96.	"Not to assume it's impossible because you find it hard. But to recognize that if it's humanly possible, you can do it too." – Marcus Aurelius
+97.	"In anger we should refrain both from speech and action." – Pythagoras
+98.	"It is folly for a man to pray to the gods for that which he has the power to obtain by himself." – Epicurus
+99.	"Victory comes from finding opportunities in problems." – Sun Tzu
+100. "Before you embark on a journey of revenge, dig two graves." – Confucius
+101. "There is only one way to happiness and that is to cease worrying about things which are beyond the power or our will." – Epictetus
