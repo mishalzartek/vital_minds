@@ -14,6 +14,7 @@ class YTScreen extends StatelessWidget {
   final VideosHomePageViewModel viewModel;
   @override
   Widget build(BuildContext context) {
+    final assetsAudioPlayer = AssetsAudioPlayer();
     dynamic height = MediaQuery.of(context).size.height;
     dynamic width = MediaQuery.of(context).size.width;
     return ViewModelBuilder<VideosHomePageViewModel>.reactive(
@@ -23,6 +24,13 @@ class YTScreen extends StatelessWidget {
           child: WillPopScope(
             onWillPop: () async {
               model.goToVideosDetailsPage(viewModel, title, videos);
+              assetsAudioPlayer.open(
+                Audio.network(
+                    "https://vital-minds.s3.ap-south-1.amazonaws.com/vital_minds_bg_music.mp3"),
+                autoStart: true,
+                loopMode: LoopMode.single,
+                showNotification: false,
+              );
               return true;
             },
             child: Scaffold(
@@ -45,6 +53,14 @@ class YTScreen extends StatelessWidget {
                                   onTap: () {
                                     viewModel.goToVideosDetailsPage(
                                         viewModel, title, videos);
+
+                                    assetsAudioPlayer.open(
+                                      Audio.network(
+                                          "https://vital-minds.s3.ap-south-1.amazonaws.com/vital_minds_bg_music.mp3"),
+                                      autoStart: true,
+                                      loopMode: LoopMode.single,
+                                      showNotification: false,
+                                    );
                                   },
                                   child: Container(
                                     margin:
