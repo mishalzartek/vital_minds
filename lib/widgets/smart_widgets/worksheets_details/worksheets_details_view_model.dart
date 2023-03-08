@@ -96,8 +96,9 @@ class WorksheetsDetailsViewModel extends FutureViewModel {
   //Fields related to template 2
   Map template2Topic1 = {
     "title": "Turning Stress Into Action",
-    "summary": "Did you know that the symptoms we feel when we’re stressed and those that we feel when we’re excited are exactly the same? You may have noticed how you feel your heart racing, you begin to sweat, or this tightness in your stomach before going on a rollercoaster ride? That’s the same way we feel when something stressed us out. So let's see how we can use our stress to propel us into action! How can you use this energy to rise to the occasion ?",
-    "questions" : [
+    "summary":
+        "Did you know that the symptoms we feel when we’re stressed and those that we feel when we’re excited are exactly the same? You may have noticed how you feel your heart racing, you begin to sweat, or this tightness in your stomach before going on a rollercoaster ride? That’s the same way we feel when something stressed us out. So let's see how we can use our stress to propel us into action! How can you use this energy to rise to the occasion ?",
+    "questions": [
       "What is stressing you out?",
       "How does this affect your...",
       "Now think of these emotion as a rush of energy that helps you rise to the ocassion and take action",
@@ -118,8 +119,9 @@ class WorksheetsDetailsViewModel extends FutureViewModel {
   };
   Map template2Topic2 = {
     "title": "Rule of three",
-    "summary":"A great way to tackle our to-do list so we can breathe a sigh of relief at the end of it is by focusing on 3 concrete things for the day. The first step is to simply write down everything we need to do. You don’t have to feel overwhelmed by the list. Just try to complete the 3 most important things in there. Remember to acknowledge when you’ve completed a task. The dopamine released brings a sense of accomplishment, happiness and motivates us to keep going!",
-  "questions": [
+    "summary":
+        "A great way to tackle our to-do list so we can breathe a sigh of relief at the end of it is by focusing on 3 concrete things for the day. The first step is to simply write down everything we need to do. You don’t have to feel overwhelmed by the list. Just try to complete the 3 most important things in there. Remember to acknowledge when you’ve completed a task. The dopamine released brings a sense of accomplishment, happiness and motivates us to keep going!",
+    "questions": [
       "Write down everything you need to do today ",
       "What are your 3 main tasks that would bring about the most releif after completion?",
       "How do you plan on allocating your time to these three tasks?",
@@ -142,8 +144,9 @@ class WorksheetsDetailsViewModel extends FutureViewModel {
   };
   Map template2Topic3 = {
     "title": "Stop worrying about the future",
-    "summary":"We worry about things that may or may not happen in the future. While it may be productive to anticipate future outcomes and take necessary caution, most of the time our worries aren't action-oriented or solution-focused. They’re just a cycle of unhelpful thoughts, leaving us drained or stressed out. Let's see how we can beat this habit by taking action or simply letting go of things beyond our control.",
-  "questions": [
+    "summary":
+        "We worry about things that may or may not happen in the future. While it may be productive to anticipate future outcomes and take necessary caution, most of the time our worries aren't action-oriented or solution-focused. They’re just a cycle of unhelpful thoughts, leaving us drained or stressed out. Let's see how we can beat this habit by taking action or simply letting go of things beyond our control.",
+    "questions": [
       "What are you worrying about?",
       "What do your worries sound like?",
       "How do these worries affect your...",
@@ -185,7 +188,8 @@ class WorksheetsDetailsViewModel extends FutureViewModel {
   bool template3Topic1No = false;
   Map template3Topic1 = {
     "title": "Reframing our SHOULD statements",
-    "summary":"We often assume things “Should” be a certain way – We should be able to handle problems on our own, our kids should be good at math etc. And when don’t keep up with our should statements, we often feel disheartened or frustrated, and feel even more hopeless. However, we can change this by accepting the reality of our situation and asking ourselves how we CAN do our best given the current circumstances.",
+    "summary":
+        "We often assume things “Should” be a certain way – We should be able to handle problems on our own, our kids should be good at math etc. And when don’t keep up with our should statements, we often feel disheartened or frustrated, and feel even more hopeless. However, we can change this by accepting the reality of our situation and asking ourselves how we CAN do our best given the current circumstances.",
     "questions": [
       "What are some of your SHOULD statements?",
       "Why do you think things SHOULD be this way?",
@@ -375,7 +379,8 @@ class WorksheetsDetailsViewModel extends FutureViewModel {
   //Topic 5 : Tapping into our Resources
   Map template3Topic5 = {
     "title": "Tapping into our Resources",
-    "summary":"Our worrying thoughts can cloud our thinking, and make us feel like there's no way we’ll be able to cope with our situation. But this is because we often overlook the resources we have at our disposal. If you look closely you’ll realise that there is more than one solution to your problem. Take a few deep breaths and try to fill out the following questions to help you deal with a potential stressor with more confidence. ",
+    "summary":
+        "Our worrying thoughts can cloud our thinking, and make us feel like there's no way we’ll be able to cope with our situation. But this is because we often overlook the resources we have at our disposal. If you look closely you’ll realise that there is more than one solution to your problem. Take a few deep breaths and try to fill out the following questions to help you deal with a potential stressor with more confidence. ",
     "questions": [
       "What are you worrying about?",
       "What worst case scenario/ scenarios you think might happen?",
@@ -412,7 +417,7 @@ class WorksheetsDetailsViewModel extends FutureViewModel {
   Map template3Topic6 = {
     "title": "Thought Record",
     "summary":
-      "Research shows that we have around 70,000 thoughts per day. And many of these thoughts incite feelings of self-doubt, fear, and discouragement. Here are a few questions you can ask yourself to balance your negative thinking… With practice, you can train your brain to develop healthier thoughts and behaviours",
+        "Research shows that we have around 70,000 thoughts per day. And many of these thoughts incite feelings of self-doubt, fear, and discouragement. Here are a few questions you can ask yourself to balance your negative thinking… With practice, you can train your brain to develop healthier thoughts and behaviours",
     "questions": [
       "Situation • Describe the situation that led to your negative feelings",
       "Initial Thought • What thought first crossed your mind?",
@@ -430,7 +435,7 @@ class WorksheetsDetailsViewModel extends FutureViewModel {
   Map template3Topic7 = {
     "title": "Tiny changes with big benefits",
     "summary":
-    "Have you ever noticed how small tiny things in your life make all the difference? It could be being 5 mins early to work that lifts a ton of stress. Or a simple act of kindness that helps you feel so positive. Maybe it's just doing your bed or setting aside 10 minutes to meditate/ or exercise daily, which helps you power through your day with so much more clarity and energy. These acts usually seem small and insignificant and therefore we neglect them but they make a big difference in our lives because of the incremental benefits that follow. Let's reflect on this for a  moment",
+        "Have you ever noticed how small tiny things in your life make all the difference? It could be being 5 mins early to work that lifts a ton of stress. Or a simple act of kindness that helps you feel so positive. Maybe it's just doing your bed or setting aside 10 minutes to meditate/ or exercise daily, which helps you power through your day with so much more clarity and energy. These acts usually seem small and insignificant and therefore we neglect them but they make a big difference in our lives because of the incremental benefits that follow. Let's reflect on this for a  moment",
     "questions": [
       "What is one small act that you can do that would help you bring down a significant amount of stress?",
       "How much effort do you think it would take?",
@@ -1334,12 +1339,20 @@ class WorksheetsDetailsViewModel extends FutureViewModel {
         List<String> answers6 = List<String>.generate(
             template2Topic1["answers"][5].length,
             (index) => template2Topic1["answers"][5][index].text);
-        answers1.isNotEmpty &&
-                answers2.isNotEmpty &&
-                answers4.isNotEmpty &&
-                answers5.isNotEmpty
-            ? completed = true
-            : completed = false;
+        for (var i = 0; i < answers1.length; i++) {
+          if (answers1[i].isNotEmpty &&
+              answers2[i].isNotEmpty &&
+              answers4[i].isNotEmpty &&
+              answers5[i].isNotEmpty) {
+            completed = true;
+          } 
+        }
+        // answers1.isNotEmpty &&
+        //         answers2.isNotEmpty &&
+        //         answers4.isNotEmpty &&
+        //         answers5.isNotEmpty
+        //     ? completed = true
+        //     : completed = false;
         await FirebaseFirestore.instance
             .collection("users")
             .doc(uid)
@@ -1960,8 +1973,8 @@ class WorksheetsDetailsViewModel extends FutureViewModel {
           ? completed = true
           : completed = false;
       notifyListeners();
-      _firestoreService.updateBasicModelData(date,
-          uid, worksheetname, worryingAbout.text, yes, whatCanIDo, completed);
+      _firestoreService.updateBasicModelData(date, uid, worksheetname,
+          worryingAbout.text, yes, whatCanIDo, completed);
     } else {}
   }
 
@@ -2113,7 +2126,8 @@ class WorksheetsDetailsViewModel extends FutureViewModel {
             ));
     template4Topic1 = {
       "title": "Living a life of meaning and purpose",
-      "summary":"When we’re stressed or overwhelmed, we often feel like nothing is in our hands which often leads to feelings of helplessness and even more stress. But if you look closely, you’ll notice a lot is in your control. And if things aren't entirely in your control, there are areas you can exercise your influence, and we can focus on that. But the first and most important part is knowing what you want. Now, let's take a moment to think about how this looks like for you…",
+      "summary":
+          "When we’re stressed or overwhelmed, we often feel like nothing is in our hands which often leads to feelings of helplessness and even more stress. But if you look closely, you’ll notice a lot is in your control. And if things aren't entirely in your control, there are areas you can exercise your influence, and we can focus on that. But the first and most important part is knowing what you want. Now, let's take a moment to think about how this looks like for you…",
       "questions": [
         "Identify your core FAMILY Values",
         "Identify your core RELATIONSHIP Values",
