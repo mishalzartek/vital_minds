@@ -81,7 +81,7 @@ class _BasicWorksheetTemplateWidgetState
                           fontFamily: 'Roboto',
                           fontSize: 16,
                           fontWeight: FontWeight.w600,
-                          color: Color.fromRGBO(39, 51, 72, 1)),
+                          color: Colors.white),
                     ),
                     Container(
                       child: Text(
@@ -90,7 +90,7 @@ class _BasicWorksheetTemplateWidgetState
                             fontFamily: 'Roboto',
                             fontSize: 12,
                             fontWeight: FontWeight.normal,
-                            color: Color.fromRGBO(39, 51, 72, 1)),
+                            color: Colors.white),
                       ),
                     ),
                   ],
