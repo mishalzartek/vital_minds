@@ -34,7 +34,11 @@ class WorksheetsWidget extends StatelessWidget {
                   viewModel.simplifyingLife),
               buildList(context, viewModel, "Reflection", viewModel.reflection),
               buildList(
-                  context, viewModel, "Reduce Anxiety", viewModel.anxiety),
+                context,
+                viewModel,
+                "Reduce Anxiety",
+                viewModel.anxiety,
+              ),
               buildList(
                   context, viewModel, "Fight Depression", viewModel.depression),
             ],
@@ -71,7 +75,8 @@ Widget buildList(BuildContext context, WorksheetsWidgetViewModel viewModel,
             itemBuilder: (context, index) {
               return GestureDetector(
                 onTap: () {
-                  viewModel.navigateToDetailsPage(title, list[index]["title"], context);
+                  viewModel.navigateToDetailsPage(
+                      title, list[index]["title"], context);
                 },
                 child: Container(
                   margin:

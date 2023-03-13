@@ -56,11 +56,16 @@ class WorksheetsWidgetViewModel extends FutureViewModel {
     {"title": "Positive personality", "time": "2 mins"},
   ];
   List completedWorksheetsList = [];
-  void navigateToDetailsPage(String categoryTitle, String mainTitle, BuildContext context) {
+  void navigateToDetailsPage(
+    String categoryTitle,
+    String mainTitle,
+    BuildContext context,
+  ) {
     print("navigating to $categoryTitle, $mainTitle");
     log.i(selectedDay.toString());
     navigationService.navigateToView(
-        WorksheetsDetailsWidget(categoryTitle, mainTitle, selectedDay, false));
+      WorksheetsDetailsWidget(categoryTitle, mainTitle, selectedDay, false),
+    );
   }
 
   Future getData() async {

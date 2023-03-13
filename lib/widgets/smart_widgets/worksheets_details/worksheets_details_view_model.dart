@@ -1345,7 +1345,7 @@ class WorksheetsDetailsViewModel extends FutureViewModel {
               answers4[i].isNotEmpty &&
               answers5[i].isNotEmpty) {
             completed = true;
-          } 
+          }
         }
         // answers1.isNotEmpty &&
         //         answers2.isNotEmpty &&
@@ -1388,14 +1388,22 @@ class WorksheetsDetailsViewModel extends FutureViewModel {
         List<String> answers6 = List<String>.generate(
             template2Topic2["answers"][5].length,
             (index) => template2Topic2["answers"][5][index].text);
-        answers1 != null &&
-                answers2 != null &&
-                answers3 != null &&
-                answers4 != null &&
-                answers5 != null &&
-                answers6 != null
-            ? completed = true
-            : completed = false;
+        for (var i = 0; i < answers1.length; i++) {
+          if (answers1[i].isNotEmpty &&
+              answers2[i].isNotEmpty &&
+              answers4[i].isNotEmpty &&
+              answers5[i].isNotEmpty) {
+            completed = true;
+          }
+        }
+        // answers1 != null &&
+        //         answers2 != null &&
+        //         answers3 != null &&
+        //         answers4 != null &&
+        //         answers5 != null &&
+        //         answers6 != null
+        //     ? completed = true
+        //     : completed = false;
         await FirebaseFirestore.instance
             .collection("users")
             .doc(uid)
@@ -1434,16 +1442,24 @@ class WorksheetsDetailsViewModel extends FutureViewModel {
         List<String> answers7 = List<String>.generate(
             template2Topic3["answers"][6].length,
             (index) => template2Topic3["answers"][6][index].text);
-        answers1 != null &&
-                answers2 != null &&
-                answers3 != null &&
-                answers4 != null &&
-                answers5 != null &&
-                answers6 != null &&
-                template2Topic3Yes != null &&
-                template2Topic3No != null
-            ? completed = true
-            : completed = false;
+        for (var i = 0; i < answers1.length; i++) {
+          if (answers1[i].isNotEmpty &&
+              answers2[i].isNotEmpty &&
+              answers4[i].isNotEmpty &&
+              answers5[i].isNotEmpty) {
+            completed = true;
+          }
+        }
+        // answers1 != null &&
+        //         answers2 != null &&
+        //         answers3 != null &&
+        //         answers4 != null &&
+        //         answers5 != null &&
+        //         answers6 != null &&
+        //         template2Topic3Yes != null &&
+        //         template2Topic3No != null
+        //     ? completed = true
+        //     : completed = false;
         await FirebaseFirestore.instance
             .collection("users")
             .doc(uid)
@@ -1484,16 +1500,24 @@ class WorksheetsDetailsViewModel extends FutureViewModel {
         List<String> answers6 = List<String>.generate(
             template3Topic1["answers"][5].length,
             (index) => template3Topic1["answers"][5][index].text);
-        answers1 != null &&
-                answers2 != null &&
-                answers3 != null &&
-                answers4 != null &&
-                answers5 != null &&
-                answers6 != null &&
-                template3Topic1Yes != null &&
-                template3Topic1No != null
-            ? completed = true
-            : completed = false;
+        for (var i = 0; i < answers1.length; i++) {
+          if (answers1[i].isNotEmpty &&
+              answers2[i].isNotEmpty &&
+              answers4[i].isNotEmpty &&
+              answers5[i].isNotEmpty) {
+            completed = true;
+          }
+        }
+        // answers1 != null &&
+        //         answers2 != null &&
+        //         answers3 != null &&
+        //         answers4 != null &&
+        //         answers5 != null &&
+        //         answers6 != null &&
+        //         template3Topic1Yes != null &&
+        //         template3Topic1No != null
+        //     ? completed = true
+        //     : completed = false;
         await FirebaseFirestore.instance
             .collection("users")
             .doc(uid)
@@ -1531,14 +1555,22 @@ class WorksheetsDetailsViewModel extends FutureViewModel {
         List<String> answers6 = List<String>.generate(
             template3Topic2["answers"][5].length,
             (index) => template3Topic2["answers"][5][index].text);
-        answers1 != null &&
-                answers2 != null &&
-                answers3 != null &&
-                answers4 != null &&
-                answers5 != null &&
-                answers6 != null
-            ? completed = true
-            : completed = false;
+        for (var i = 0; i < answers1.length; i++) {
+          if (answers1[i].isNotEmpty &&
+              answers2[i].isNotEmpty &&
+              answers4[i].isNotEmpty &&
+              answers5[i].isNotEmpty) {
+            completed = true;
+          }
+        }
+        // answers1 != null &&
+        //         answers2 != null &&
+        //         answers3 != null &&
+        //         answers4 != null &&
+        //         answers5 != null &&
+        //         answers6 != null
+        //     ? completed = true
+        //     : completed = false;
         await FirebaseFirestore.instance
             .collection("users")
             .doc(uid)
@@ -1574,14 +1606,22 @@ class WorksheetsDetailsViewModel extends FutureViewModel {
         List<String> answers6 = List<String>.generate(
             template3Topic3["answers"][5].length,
             (index) => template3Topic3["answers"][5][index].text);
-        answers1 != null &&
-                answers2 != null &&
-                answers3 != null &&
-                answers4 != null &&
-                answers5 != null &&
-                answers6 != null
-            ? completed = true
-            : completed = false;
+        for (var i = 0; i < answers1.length; i++) {
+          if (answers1[i].isNotEmpty &&
+              answers2[i].isNotEmpty &&
+              answers4[i].isNotEmpty &&
+              answers5[i].isNotEmpty) {
+            completed = true;
+          }
+        }
+        // answers1 != null &&
+        //         answers2 != null &&
+        //         answers3 != null &&
+        //         answers4 != null &&
+        //         answers5 != null &&
+        //         answers6 != null
+        //     ? completed = true
+        //     : completed = false;
         await FirebaseFirestore.instance
             .collection("users")
             .doc(uid)
@@ -1623,16 +1663,24 @@ class WorksheetsDetailsViewModel extends FutureViewModel {
         List<String> answers8 = List<String>.generate(
             template3Topic4["answers"][7].length,
             (index) => template3Topic4["answers"][7][index].text);
-        answers1 != null &&
-                answers2 != null &&
-                answers3 != null &&
-                answers4 != null &&
-                answers5 != null &&
-                answers6 != null &&
-                answers7 != null &&
-                answers8 != null
-            ? completed = true
-            : completed = false;
+        for (var i = 0; i < answers1.length; i++) {
+          if (answers1[i].isNotEmpty &&
+              answers2[i].isNotEmpty &&
+              answers4[i].isNotEmpty &&
+              answers5[i].isNotEmpty) {
+            completed = true;
+          }
+        }
+        // answers1 != null &&
+        //         answers2 != null &&
+        //         answers3 != null &&
+        //         answers4 != null &&
+        //         answers5 != null &&
+        //         answers6 != null &&
+        //         answers7 != null &&
+        //         answers8 != null
+        //     ? completed = true
+        //     : completed = false;
         await FirebaseFirestore.instance
             .collection("users")
             .doc(uid)
@@ -1670,14 +1718,22 @@ class WorksheetsDetailsViewModel extends FutureViewModel {
         List<String> answers6 = List<String>.generate(
             template3Topic5["answers"][5].length,
             (index) => template3Topic5["answers"][5][index].text);
-        answers1 != null &&
-                answers2 != null &&
-                answers3 != null &&
-                answers4 != null &&
-                answers5 != null &&
-                answers6 != null
-            ? completed = true
-            : completed = false;
+        for (var i = 0; i < answers1.length; i++) {
+          if (answers1[i].isNotEmpty &&
+              answers2[i].isNotEmpty &&
+              answers4[i].isNotEmpty &&
+              answers5[i].isNotEmpty) {
+            completed = true;
+          }
+        }
+        // answers1 != null &&
+        //         answers2 != null &&
+        //         answers3 != null &&
+        //         answers4 != null &&
+        //         answers5 != null &&
+        //         answers6 != null
+        //     ? completed = true
+        //     : completed = false;
         await FirebaseFirestore.instance
             .collection("users")
             .doc(uid)
@@ -1716,17 +1772,25 @@ class WorksheetsDetailsViewModel extends FutureViewModel {
         List<String> answers7 = List<String>.generate(
             template3Topic6["answers"][6].length,
             (index) => template3Topic6["answers"][6][index].text);
-        answers1 != null &&
-                answers2 != null &&
-                answers3 != null &&
-                answers4 != null &&
-                answers5 != null &&
-                answers6 != null &&
-                answers7 != null &&
-                template3Topic6Yes != null &&
-                template3Topic6No != null
-            ? completed = true
-            : completed = false;
+        for (var i = 0; i < answers1.length; i++) {
+          if (answers1[i].isNotEmpty &&
+              answers2[i].isNotEmpty &&
+              answers4[i].isNotEmpty &&
+              answers5[i].isNotEmpty) {
+            completed = true;
+          }
+        }
+        // answers1 != null &&
+        //         answers2 != null &&
+        //         answers3 != null &&
+        //         answers4 != null &&
+        //         answers5 != null &&
+        //         answers6 != null &&
+        //         answers7 != null &&
+        //         template3Topic6Yes != null &&
+        //         template3Topic6No != null
+        // ? completed = true
+        // : completed = false;
         await FirebaseFirestore.instance
             .collection("users")
             .doc(uid)
@@ -1756,9 +1820,14 @@ class WorksheetsDetailsViewModel extends FutureViewModel {
         List<String> answers3 = List<String>.generate(
             template3Topic7["answers"][2].length,
             (index) => template3Topic7["answers"][2][index].text);
-        answers1 != null && answers2 != null && answers3 != null
-            ? completed = true
-            : completed = false;
+        for (var i = 0; i < answers1.length; i++) {
+          if (answers1[i].isNotEmpty && answers2[i].isNotEmpty) {
+            completed = true;
+          }
+        }
+        // answers1 != null && answers2 != null && answers3 != null
+        //     ? completed = true
+        //     : completed = false;
         await FirebaseFirestore.instance
             .collection("users")
             .doc(uid)
@@ -1791,14 +1860,22 @@ class WorksheetsDetailsViewModel extends FutureViewModel {
         List<String> answers6 = List<String>.generate(
             template3Topic8["answers"][5].length,
             (index) => template3Topic8["answers"][5][index].text);
-        answers1 != null &&
-                answers2 != null &&
-                answers3 != null &&
-                answers4 != null &&
-                answers5 != null &&
-                answers6 != null
-            ? completed = true
-            : completed = false;
+        for (var i = 0; i < answers1.length; i++) {
+          if (answers1[i].isNotEmpty &&
+              answers2[i].isNotEmpty &&
+              answers4[i].isNotEmpty &&
+              answers5[i].isNotEmpty) {
+            completed = true;
+          }
+        }
+        // answers1 != null &&
+        //         answers2 != null &&
+        //         answers3 != null &&
+        //         answers4 != null &&
+        //         answers5 != null &&
+        //         answers6 != null
+        //     ? completed = true
+        //     : completed = false;
         await FirebaseFirestore.instance
             .collection("users")
             .doc(uid)
@@ -1902,6 +1979,7 @@ class WorksheetsDetailsViewModel extends FutureViewModel {
         "step4": stepTexts[3].text,
         "step5": stepTexts[4].text,
         "currentStep": currentStep,
+        "completed": completed,
       });
     } else if (template == 6) {
       ((abcdeModelInternal.text != '' && abcdeModelInternal.text != null) &&

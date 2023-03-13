@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
@@ -5,6 +7,8 @@ import 'package:vitalminds/widgets/smart_widgets/videos_home_page/videos_home_pa
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 import '../Themes.dart';
+
+final globalAssetsAudioPlayer = AssetsAudioPlayer();
 
 class YTScreen extends StatelessWidget {
   YTScreen(this.viewModel, this.title, this.videoData, this.videos);
@@ -14,7 +18,6 @@ class YTScreen extends StatelessWidget {
   final VideosHomePageViewModel viewModel;
   @override
   Widget build(BuildContext context) {
-    final assetsAudioPlayer = AssetsAudioPlayer();
     dynamic height = MediaQuery.of(context).size.height;
     dynamic width = MediaQuery.of(context).size.width;
     return ViewModelBuilder<VideosHomePageViewModel>.reactive(
@@ -24,13 +27,15 @@ class YTScreen extends StatelessWidget {
           child: WillPopScope(
             onWillPop: () async {
               model.goToVideosDetailsPage(viewModel, title, videos);
-              assetsAudioPlayer.open(
-                Audio.network(
-                    "https://vital-minds.s3.ap-south-1.amazonaws.com/vital_minds_bg_music.mp3"),
-                autoStart: true,
-                loopMode: LoopMode.single,
-                showNotification: false,
-              );
+              if (Platform.isAndroid) {
+                globalAssetsAudioPlayer.open(
+                  Audio.network(
+                      "https://vital-minds.s3.ap-south-1.amazonaws.com/vital_minds_bg_music.mp3"),
+                  autoStart: true,
+                  loopMode: LoopMode.single,
+                  showNotification: false,
+                );
+              }
               return true;
             },
             child: Scaffold(
@@ -54,13 +59,15 @@ class YTScreen extends StatelessWidget {
                                     viewModel.goToVideosDetailsPage(
                                         viewModel, title, videos);
 
-                                    assetsAudioPlayer.open(
-                                      Audio.network(
-                                          "https://vital-minds.s3.ap-south-1.amazonaws.com/vital_minds_bg_music.mp3"),
-                                      autoStart: true,
-                                      loopMode: LoopMode.single,
-                                      showNotification: false,
-                                    );
+                                    if (Platform.isAndroid) {
+                                      globalAssetsAudioPlayer.open(
+                                        Audio.network(
+                                            "https://vital-minds.s3.ap-south-1.amazonaws.com/vital_minds_bg_music.mp3"),
+                                        autoStart: true,
+                                        loopMode: LoopMode.single,
+                                        showNotification: false,
+                                      );
+                                    }
                                   },
                                   child: Container(
                                     margin:

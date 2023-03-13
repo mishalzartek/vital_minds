@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -10,6 +11,7 @@ import 'package:vitalminds/core/services/authentication_service.dart';
 import 'package:vitalminds/core/services/background_music_service.dart';
 import 'package:vitalminds/core/services/firestore_service.dart';
 import 'package:vitalminds/views/settings_page/settings_page_view.dart';
+import 'package:vitalminds/widgets/dumb_widgets/YoutubeScreen/YT_Screen.dart';
 
 class EditSettingsPageViewModel extends FutureViewModel
     implements Initialisable {
@@ -188,6 +190,7 @@ class EditSettingsPageViewModel extends FutureViewModel
       _backgroundMusicService.startBgMusic();
     else
       _backgroundMusicService.stopBgMusic();
+      globalAssetsAudioPlayer.stop();
     notifyListeners();
   }
 

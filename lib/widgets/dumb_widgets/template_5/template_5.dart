@@ -74,7 +74,7 @@ class _Template5WidgetState extends State<Template5Widget> {
                           fontFamily: 'Roboto',
                           fontSize: 16,
                           fontWeight: FontWeight.w600,
-                          color: Color.fromRGBO(39, 51, 72, 1)),
+                          color: Colors.white),
                     ),
                   )
                 ],
