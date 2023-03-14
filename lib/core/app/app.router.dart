@@ -65,7 +65,7 @@ class StackedRouter extends RouterBase {
     RouteDef(Routes.introductionViewRoute, page: IntroductionPageView),
     RouteDef(Routes.otpViewRoute, page: OTPView),
     RouteDef(Routes.registrationViewRoute, page: RegistrationView),
-    RouteDef(Routes.emailVerificcationViewRoute, page: EmailVerificcationView),
+    // RouteDef(Routes.emailVerificcationViewRoute, page: EmailVerificcationView),
     RouteDef(Routes.homeViewRoute, page: HomeView),
     RouteDef(Routes.analyticsPageViewRoute, page: AnalyticsPageView),
     RouteDef(Routes.calendarPageViewRoute, page: CalendarPageView),
@@ -113,12 +113,12 @@ class StackedRouter extends RouterBase {
         settings: data,
       );
     },
-    EmailVerificcationView: (data) {
-      return MaterialPageRoute<dynamic>(
-        builder: (context) => EmailVerificcationView(),
-        settings: data,
-      );
-    },
+    // EmailVerificcationView: (data) {
+    //   return MaterialPageRoute<dynamic>(
+    //     builder: (context) => EmailVerificcationView(),
+    //     settings: data,
+    //   );
+    // },
     HomeView: (data) {
       return MaterialPageRoute<dynamic>(
         builder: (context) => HomeView(),

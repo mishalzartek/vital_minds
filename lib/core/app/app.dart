@@ -24,7 +24,7 @@ import 'package:vitalminds/views/worksheets/worksheets_view.dart';
   MaterialRoute(page: IntroductionPageView, name: 'introductionViewRoute'),
   MaterialRoute(page: OTPView, name: 'otpViewRoute'),
   MaterialRoute(page: RegistrationView, name: 'registrationViewRoute'),
-  MaterialRoute(page: EmailVerificcationView, name: 'emailVerificcationView'),
+  // MaterialRoute(page: EmailVerificcationView, name: 'emailVerificcationView'),
   MaterialRoute(page: HomeView, name: 'homeViewRoute'),
   MaterialRoute(page: AnalyticsPageView, name: 'analyticsPageViewRoute'),
   MaterialRoute(page: CalendarPageView, name: 'calendarPageViewRoute'),

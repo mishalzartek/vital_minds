@@ -14,16 +14,16 @@ import 'package:vitalminds/views/reset_password/reset_password_view.dart';
 
 class LoginViewModel extends BaseViewModel {
   Logger log;
-  TextEditingController emailController = new TextEditingController();
+  // TextEditingController emailController = new TextEditingController();
   TextEditingController phNumberController = new TextEditingController();
   TextEditingController passwordController = new TextEditingController();
   FocusNode email = new FocusNode();
   List<double> op = [0.25, 0.25];
   FocusNode password = new FocusNode();
 
-  int loginSwitch = 0;
+  // int loginSwitch = 0;
   List<bool> flags = [false, false];
-  String switchText = "Use Phone Number";
+  // String switchText = "Use Phone Number";
   NavigationService navigationService = locator<NavigationService>();
   AuthenticationService authenticationService =
       locator<AuthenticationService>();
@@ -46,17 +46,6 @@ class LoginViewModel extends BaseViewModel {
     navigationService.navigateToView(ResetView());
   }
 
-  void loginToggle() {
-    if (loginSwitch == 0) {
-      loginSwitch = 1;
-      switchText = "Use Email ID";
-    } else if (loginSwitch == 1) {
-      loginSwitch = 0;
-      switchText = "Use Phone Number";
-    }
-    notifyListeners();
-  }
-
   void navigateToRegister() {
     // navigationService.navigateTo(Routes.registrationViewRoute);
     navigationService.replaceWithTransition(RegistrationView(),
@@ -76,11 +65,6 @@ class LoginViewModel extends BaseViewModel {
 
   Future login() async {
     setBusy(true);
-    if (loginSwitch == 0) {
-      await authenticationService.loginWithEmail(
-          email: emailController.text, password: passwordController.text);
-      setBusy(false);
-    } else if (loginSwitch == 1) {
       var mobileNumberError = validateMobile(phNumberController.text);
       log.e(mobileNumberError);
       if (mobileNumberError == null) {
@@ -106,5 +90,4 @@ class LoginViewModel extends BaseViewModel {
         timer.cancel();
       });
     }
-  }
 }

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:stacked/stacked.dart';
 import 'package:vitalminds/views/registration/registration_view_model.dart';
+import 'package:vitalminds/views/registration/widgets/head_widget.dart';
 import 'package:vitalminds/widgets/dumb_widgets/Themes.dart';
 
 // ignore: must_be_immutable
@@ -39,44 +40,7 @@ class RegistrationView extends StatelessWidget {
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
-                      Container(
-                        margin: EdgeInsets.only(
-                            top: height * 0.2, bottom: height * 0.1),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.only(left: width * 0.08),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text("Welcome to MyVitalMind",
-                                      style: TextStyle(
-                                          fontFamily: 'Roboto',
-                                          color: const Color(0xffffffff),
-                                          fontWeight: FontWeight.w700,
-                                          fontStyle: FontStyle.normal,
-                                          fontSize: 25.0),
-                                      textAlign: TextAlign.left),
-                                  Text(
-                                    " ",
-                                    style: TextStyle(fontSize: 8),
-                                  ),
-                                  Text(" Prioritize your journey to well being",
-                                      style: TextStyle(
-                                          color: const Color(0xffffffff),
-                                          fontFamily: 'Roboto',
-                                          fontWeight: FontWeight.w500,
-                                          fontStyle: FontStyle.normal,
-                                          fontSize: 15.0),
-                                      textAlign: TextAlign.left)
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
+                      HeadWidget(height: height, width: width),
                       Column(
                         children: [
                           Container(
@@ -165,15 +129,10 @@ class RegistrationView extends StatelessWidget {
                                     fontWeight: FontWeight.w600,
                                     fontStyle: FontStyle.normal,
                                     fontSize: 16.0),
-                                controller: viewModel.loginSwitch == 0
-                                    ? viewModel.emailController
-                                    : viewModel.phNumberController,
-                                keyboardType: viewModel.loginSwitch == 0
-                                    ? TextInputType.emailAddress
-                                    : TextInputType.number,
+                                controller: viewModel.phNumberController,
+                                keyboardType: TextInputType.number,
                                 decoration: new InputDecoration(
-                                    prefixText:
-                                        viewModel.loginSwitch == 1 ? "+91" : "",
+                                    prefixText: "+91" ,
                                     prefixStyle: TextStyle(
                                         fontFamily: 'Roboto',
                                         // color: const Color(0xff273348),
@@ -190,9 +149,7 @@ class RegistrationView extends StatelessWidget {
                                     enabledBorder: InputBorder.none,
                                     errorBorder: InputBorder.none,
                                     disabledBorder: InputBorder.none,
-                                    labelText: viewModel.loginSwitch == 0
-                                        ? "Email"
-                                        : "Phone Number",
+                                    labelText: "Phone Number",
                                     labelStyle: TextStyle(
                                         color: Colors.white,
                                         fontFamily: 'Roboto',
@@ -204,90 +161,14 @@ class RegistrationView extends StatelessWidget {
                                       BorderRadius.all(Radius.circular(6)),
                                   color: const Color(0xffffffff)
                                       .withOpacity(op1))),
-
-                          viewModel.loginSwitch == 1
-                              ? Column(
+                          Column(
                                   children: [
                                     SizedBox(
                                       height: height * 0.085,
                                       width: width * 0.9,
                                     )
                                   ],
-                                )
-                              : Column(
-                                  children: [
-                                    SizedBox(
-                                      height: height * 0.01,
-                                    ),
-                                    Container(
-                                        width: width * 0.9,
-                                        height: height * 0.075,
-                                        child: TextField(
-                                          style: TextStyle(
-                                              fontFamily: 'Roboto',
-                                              // color: const Color(0xff273348),
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.w600,
-                                              fontStyle: FontStyle.normal,
-                                              fontSize: 16.0),
-                                          controller:
-                                              viewModel.passwordController,
-                                          obscureText: true,
-                                          decoration: new InputDecoration(
-                                              prefixStyle: TextStyle(
-                                                  fontFamily: 'Roboto',
-                                                  // color: const Color(0xff273348),
-                                                  color: Colors.white,
-                                                  fontWeight: FontWeight.w600,
-                                                  fontStyle: FontStyle.normal,
-                                                  fontSize: 16.0),
-                                              contentPadding: EdgeInsets.only(
-                                                  top: height * 0.020,
-                                                  bottom: height * 0.012,
-                                                  left: width * 0.05),
-                                              border: InputBorder.none,
-                                              focusedBorder: InputBorder.none,
-                                              enabledBorder: InputBorder.none,
-                                              errorBorder: InputBorder.none,
-                                              disabledBorder: InputBorder.none,
-                                              labelText: "Password",
-                                              labelStyle: TextStyle(
-                                                  color: Colors.white,
-                                                  fontFamily: 'Roboto',
-                                                  fontSize: 15,
-                                                  fontWeight: FontWeight.w500)),
-                                        ),
-                                        decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.all(
-                                                Radius.circular(6)),
-                                            color: const Color(0xffffffff)
-                                                .withOpacity(op1))),
-                                  ],
                                 ),
-                          GestureDetector(
-                            onTap: () => viewModel.loginToggle(),
-                            child: Container(
-                              width: width * 0.9,
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  Padding(
-                                    padding:
-                                        EdgeInsets.only(top: height * 0.01),
-                                    child: Text("\n" + viewModel.switchText,
-                                        style: TextStyle(
-                                            fontFamily: 'Roboto',
-                                            color: const Color(0xffffffff),
-                                            fontWeight: FontWeight.w600,
-                                            fontStyle: FontStyle.normal,
-                                            fontSize: 14.0),
-                                        textAlign: TextAlign.left),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                          //SizedBox(height: height * 0.1,),
                           Container(
                             width: width * 0.9,
                             child: Row(

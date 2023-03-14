@@ -43,7 +43,7 @@ class SplashViewModel extends BaseViewModel {
     bool check = await checkNet();
     if (check) {
       bool hasUserLoggedIn = _authenticationService.isUserLoggedIn();
-      bool isEmailVerified = _authenticationService.isEmailVerified();
+      bool isEmailVerified;
       log.i("hasUserLoggedIn: " + hasUserLoggedIn.toString());
       if (hasUserLoggedIn) {
         if (await _firestoreService
@@ -57,7 +57,7 @@ class SplashViewModel extends BaseViewModel {
           if (applock == true) {
             bool isAuthenticated =
                 await Authentication.authenticateWithBiometrics();
-
+                isEmailVerified = isAuthenticated;
             if (isAuthenticated) {
               if (isEmailVerified) {
                 _navigationService.clearStackAndShow(Routes.homeViewRoute);
@@ -108,12 +108,8 @@ class SplashViewModel extends BaseViewModel {
           log.i('No user is currently logged in');
           _navigationService.clearStackAndShow(Routes.loginViewRoute);
         } else {
-          if (_authenticationService.isEmailVerified()) {
             await _navigationService.clearStackAndShow(Routes.homeViewRoute);
-          } else {
-            await _navigationService
-                .clearStackAndShow(Routes.emailVerificcationViewRoute);
-          }
+          
         }
       }
     }

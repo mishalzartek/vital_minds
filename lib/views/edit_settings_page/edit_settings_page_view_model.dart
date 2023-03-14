@@ -168,7 +168,7 @@ class EditSettingsPageViewModel extends FutureViewModel
   }
 
   Future getProfileData(String uid) async {
-    User user = await _firestoreService.getUser(uid);
+    UserModel user = await _firestoreService.getUser(uid);
     email = user.email ?? " ";
     phno = email == " "
         ? authenticationService.user.phoneNumber

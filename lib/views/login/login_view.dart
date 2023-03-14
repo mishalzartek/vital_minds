@@ -37,11 +37,8 @@ class LoginView extends StatelessWidget {
                     child: Column(
                       children: [
                         Container(
-                          margin: viewModel.loginSwitch == 0
-                              ? EdgeInsets.only(
-                                  top: height * 0.2, bottom: height * 0.27)
-                              : EdgeInsets.only(
-                                  top: height * 0.2, bottom: height * 0.355),
+                          margin: EdgeInsets.only(
+                              top: height * 0.2, bottom: height * 0.27),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
@@ -94,9 +91,7 @@ class LoginView extends StatelessWidget {
                                     fontWeight: FontWeight.w600,
                                     fontStyle: FontStyle.normal,
                                     fontSize: 16.0),
-                                controller: viewModel.loginSwitch == 0
-                                    ? viewModel.emailController
-                                    : viewModel.phNumberController,
+                                controller: viewModel.phNumberController,
                                 // onEditingComplete: () {
                                 //   viewModel.changeOpacity(
                                 //       0,
@@ -105,9 +100,7 @@ class LoginView extends StatelessWidget {
                                 //           : viewModel.phNumberController);
                                 //   FocusScope.of(context).nextFocus();
                                 // },
-                                keyboardType: viewModel.loginSwitch == 0
-                                    ? TextInputType.emailAddress
-                                    : TextInputType.number,
+                                keyboardType: TextInputType.number,
                                 decoration: new InputDecoration(
                                   contentPadding: EdgeInsets.only(
                                       top: height * 0.020,
@@ -118,9 +111,7 @@ class LoginView extends StatelessWidget {
                                   enabledBorder: InputBorder.none,
                                   errorBorder: InputBorder.none,
                                   disabledBorder: InputBorder.none,
-                                  labelText: viewModel.loginSwitch == 0
-                                      ? "Email ID"
-                                      : "Phone Number",
+                                  labelText: "Phone Number",
                                   labelStyle: TextStyle(
                                       color: viewModel.flags[0]
                                           ? Color.fromRGBO(39, 51, 72, 1)
@@ -136,10 +127,7 @@ class LoginView extends StatelessWidget {
                                 color: const Color(0xffffffff)
                                     .withOpacity(viewModel.op[0]),
                               ),
-                            ),
-                            viewModel.loginSwitch == 1
-                                ? Container()
-                                : Column(
+                            ), Column(
                                     children: [
                                       SizedBox(
                                         height: height * 0.01,
@@ -193,37 +181,35 @@ class LoginView extends StatelessWidget {
                                                       viewModel.op[1]))),
                                     ],
                                   ),
-                            GestureDetector(
-                              onTap: () => viewModel.loginToggle(),
-                              child: Container(
-                                width: width * 0.9,
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [
-                                    Padding(
-                                      padding:
-                                          EdgeInsets.only(top: height * 0.01),
-                                      child: Text("\n" + viewModel.switchText,
-                                          style: TextStyle(
-                                              fontFamily: 'Roboto',
-                                              color: const Color(0xffffffff),
-                                              fontWeight: FontWeight.w600,
-                                              fontStyle: FontStyle.normal,
-                                              fontSize: 14.0),
-                                          textAlign: TextAlign.left),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
+                            // GestureDetector(
+                            //   onTap: () {},
+                            //   child: Container(
+                            //     width: width * 0.9,
+                            //     child: Row(
+                            //       mainAxisAlignment: MainAxisAlignment.end,
+                            //       children: [
+                            //         Padding(
+                            //           padding:
+                            //               EdgeInsets.only(top: height * 0.01),
+                            //           child: Text("\n" + 'kk',
+                            //               style: TextStyle(
+                            //                   fontFamily: 'Roboto',
+                            //                   color: const Color(0xffffffff),
+                            //                   fontWeight: FontWeight.w600,
+                            //                   fontStyle: FontStyle.normal,
+                            //                   fontSize: 14.0),
+                            //               textAlign: TextAlign.left),
+                            //         ),
+                            //       ],
+                            //     ),
+                            //   ),
+                            // ),
                             Container(
                               width: width * 0.9,
                               child: Row(
-                                mainAxisAlignment: viewModel.loginSwitch == 0
-                                    ? MainAxisAlignment.spaceBetween
-                                    : MainAxisAlignment.end,
+                                mainAxisAlignment:  MainAxisAlignment.spaceBetween,
                                 children: [
-                                  if (viewModel.loginSwitch == 0)
+                                  // if (viewModel.loginSwitch == 0)
                                     GestureDetector(
                                       onTap: () => viewModel.forgotPassword(),
                                       child: Padding(

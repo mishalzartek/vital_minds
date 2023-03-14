@@ -220,7 +220,7 @@ class FirestoreService {
     try {
       DocumentSnapshot userData =
           await _usersCollectionReference.doc(uid).get();
-      return User.fromMap(userData.data());
+      return UserModel.fromMap(userData.data());
     } on FirebaseException catch (e) {
       log.e(e.message);
       return e.message;
@@ -248,7 +248,7 @@ class FirestoreService {
     }
   }
 
-  void createUser(User user, String uid) {
+  void createUser(UserModel user, String uid) {
     log.i("Creating document if doc doesn't exist for user");
     try {
       _usersCollectionReference.doc(uid).get().then((snapShot) {
