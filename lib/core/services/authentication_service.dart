@@ -32,6 +32,16 @@ class AuthenticationService {
     _currentUser = user;
   }
 
+  // bool isEmailVerified() {
+  //   if (isUserLoggedIn()) {
+  //     log.i('user logged in');
+  //     log.i(_firebaseAuth.currentUser.emailVerified.toString());
+  //     return _firebaseAuth.currentUser.emailVerified;
+  //   } else {
+  //     return false;
+  //   }
+  // }
+  
   Future changePassword(firebaseAuth.User user, String password) async {
     try {
       await user
@@ -64,14 +74,15 @@ class AuthenticationService {
     try {
       this.phoneNumber = phoneNumber;
       await _firebaseAuth.verifyPhoneNumber(
-        phoneNumber: "+91$phoneNumber",
+        phoneNumber: "+$phoneNumber",
         verificationCompleted: (PhoneAuthCredential credential) async {
           await _firebaseAuth.signInWithCredential(credential).then((value) {
             log.e("You are logged in successfully");
           });
         },
         verificationFailed: (FirebaseAuthException e) {
-          log.e(e.message.toString());
+          print(e);
+          print("$phoneNumber");
           Fluttertoast.showToast(
             msg: "Verification Failed try Again",
             gravity: ToastGravity.BOTTOM,
@@ -84,7 +95,7 @@ class AuthenticationService {
       );
       log.i('verifyPhoneNumber terminates');
     } catch (e) {
-      log.e(e.message);
+      print(e);
       _snackbarService.showSnackbar(message: e.message);
     }
   }
@@ -105,15 +116,15 @@ class AuthenticationService {
       try {
         firebaseAuth.UserCredential userCredential =
             await _firebaseAuth.signInWithCredential(_authCredential);
-        if (userCredential.additionalUserInfo.isNewUser) {
-          await userCredential.user.delete();
-          Fluttertoast.showToast(
-              timeInSecForIosWeb: 2,
-              msg: "U need to register first!",
-              gravity: ToastGravity.BOTTOM);
-          await _navigationService.replaceWithTransition(LoginView(),
-              transitionStyle: Transition.rightToLeft);
-        }
+        // if (userCredential.additionalUserInfo.isNewUser) {
+        //   await userCredential.user.delete();
+        //   Fluttertoast.showToast(
+        //       timeInSecForIosWeb: 2,
+        //       msg: "U need to register first!",
+        //       gravity: ToastGravity.BOTTOM);
+        //   await _navigationService.replaceWithTransition(LoginView(),
+        //       transitionStyle: Transition.rightToLeft);
+        // }
         if (userCredential.user != null) {
           user = userCredential.user;
           Fluttertoast.showToast(
@@ -165,7 +176,11 @@ class AuthenticationService {
   Future populateCurrentUser(firebaseAuth.User user) async {
     log.i('populateCurrentUser called');
     if (user != null) {
-      _currentUser = await _firestoreService.getUser(user.uid);
+     try{
+       _currentUser = await _firestoreService.getUser(user.uid);
+     } catch (e){
+      print(e);
+     }
     }
   }
 }

@@ -12,10 +12,10 @@ import 'package:vitalminds/views/login/login_view.dart';
 class RegistrationViewModel extends BaseViewModel {
   Logger log;
   // TextEditingController emailController = new TextEditingController();
-  TextEditingController phNumberController = new TextEditingController();
-  TextEditingController passwordController = new TextEditingController();
-  TextEditingController nameController = new TextEditingController();
-  TextEditingController ageController = new TextEditingController();
+  // TextEditingController phNumberController = new TextEditingController();
+  // TextEditingController passwordController = new TextEditingController();
+  // TextEditingController nameController = new TextEditingController();
+  // TextEditingController ageController = new TextEditingController();
 
   // int loginSwitch = 0;
   // String switchText = "Use Phone Number";
@@ -34,18 +34,18 @@ class RegistrationViewModel extends BaseViewModel {
         transition: 'rightToLeft');
   }
 
-  Future register() async {
+  Future register(String name, String age, String phoneNumber) async {
     setBusy(true);
-      if (nameController.text == "" || phNumberController.text == "") {
+      if (name == "" || phoneNumber == "") {
         setBusy(false);
         Fluttertoast.showToast(
             timeInSecForIosWeb: 2, msg: "Phone/Name field is empty.");
       } else {
         authenticationService
             .loginWithPhoneNumber(
-          phoneNumber: "+91" + phNumberController.text,
-          age: ageController.text,
-          name: nameController.text,
+          phoneNumber: "+91" + phoneNumber ,
+          age: age,
+          name: name,
         )
             .onError((error, stackTrace) {
           log.e(error.toString());

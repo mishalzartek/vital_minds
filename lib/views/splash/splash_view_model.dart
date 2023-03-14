@@ -43,8 +43,7 @@ class SplashViewModel extends BaseViewModel {
     bool check = await checkNet();
     if (check) {
       bool hasUserLoggedIn = _authenticationService.isUserLoggedIn();
-      bool isEmailVerified;
-      log.i("hasUserLoggedIn: " + hasUserLoggedIn.toString());
+      print("shasUserLoggedIn: " + hasUserLoggedIn.toString());
       if (hasUserLoggedIn) {
         if (await _firestoreService
             .isUserDataPresent(_authenticationService.user.uid)) {
@@ -57,35 +56,20 @@ class SplashViewModel extends BaseViewModel {
           if (applock == true) {
             bool isAuthenticated =
                 await Authentication.authenticateWithBiometrics();
-                isEmailVerified = isAuthenticated;
+
             if (isAuthenticated) {
-              if (isEmailVerified) {
-                _navigationService.clearStackAndShow(Routes.homeViewRoute);
-              } else {
-                _navigationService
-                    .clearStackAndShow(Routes.emailVerificcationViewRoute);
-              }
+              _navigationService.clearStackAndShow(Routes.homeViewRoute);
             } else {
               log.i('Local authentication failed.');
               init();
             }
           } else {
-            if (isEmailVerified) {
-              _navigationService.clearStackAndShow(Routes.homeViewRoute);
-            } else {
-              _navigationService
-                  .clearStackAndShow(Routes.emailVerificcationViewRoute);
-            }
+            _navigationService.clearStackAndShow(Routes.homeViewRoute);
           }
         } else {
           log.i(
               'User is currently logged in and data is not present in database');
-          if (isEmailVerified) {
-            await _navigationService.clearStackAndShow(Routes.homeViewRoute);
-          } else {
-            await _navigationService
-                .clearStackAndShow(Routes.emailVerificcationViewRoute);
-          }
+          await _navigationService.clearStackAndShow(Routes.homeViewRoute);
         }
       } else {
         prefs = await SharedPreferences.getInstance();
@@ -108,8 +92,7 @@ class SplashViewModel extends BaseViewModel {
           log.i('No user is currently logged in');
           _navigationService.clearStackAndShow(Routes.loginViewRoute);
         } else {
-            await _navigationService.clearStackAndShow(Routes.homeViewRoute);
-          
+          await _navigationService.clearStackAndShow(Routes.homeViewRoute);
         }
       }
     }

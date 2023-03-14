@@ -6,13 +6,16 @@ import 'package:stacked/stacked.dart';
 import 'package:vitalminds/views/registration/registration_view_model.dart';
 import 'package:vitalminds/views/registration/widgets/head_widget.dart';
 import 'package:vitalminds/widgets/dumb_widgets/Themes.dart';
-
+  TextEditingController phNumberController = TextEditingController();
+    TextEditingController ageController = TextEditingController();
+    TextEditingController nameController = TextEditingController();
 // ignore: must_be_immutable
 class RegistrationView extends StatelessWidget {
   RegistrationView({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+
     double op1 = 0.25;
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
@@ -54,7 +57,7 @@ class RegistrationView extends StatelessWidget {
                                     fontWeight: FontWeight.w600,
                                     fontStyle: FontStyle.normal,
                                     fontSize: 16.0),
-                                controller: viewModel.nameController,
+                                controller: nameController,
                                 decoration: new InputDecoration(
                                     contentPadding: EdgeInsets.only(
                                         top: height * 0.020,
@@ -91,7 +94,7 @@ class RegistrationView extends StatelessWidget {
                                     fontWeight: FontWeight.w600,
                                     fontStyle: FontStyle.normal,
                                     fontSize: 16.0),
-                                controller: viewModel.ageController,
+                                controller: ageController,
                                 keyboardType: TextInputType.number,
                                 decoration: new InputDecoration(
                                     contentPadding: EdgeInsets.only(
@@ -129,10 +132,10 @@ class RegistrationView extends StatelessWidget {
                                     fontWeight: FontWeight.w600,
                                     fontStyle: FontStyle.normal,
                                     fontSize: 16.0),
-                                controller: viewModel.phNumberController,
+                                controller: phNumberController,
                                 keyboardType: TextInputType.number,
                                 decoration: new InputDecoration(
-                                    prefixText: "+91" ,
+                                    prefixText: "+91",
                                     prefixStyle: TextStyle(
                                         fontFamily: 'Roboto',
                                         // color: const Color(0xff273348),
@@ -162,13 +165,13 @@ class RegistrationView extends StatelessWidget {
                                   color: const Color(0xffffffff)
                                       .withOpacity(op1))),
                           Column(
-                                  children: [
-                                    SizedBox(
-                                      height: height * 0.085,
-                                      width: width * 0.9,
-                                    )
-                                  ],
-                                ),
+                            children: [
+                              SizedBox(
+                                height: height * 0.085,
+                                width: width * 0.9,
+                              )
+                            ],
+                          ),
                           Container(
                             width: width * 0.9,
                             child: Row(
@@ -222,7 +225,11 @@ class RegistrationView extends StatelessWidget {
                             ))
                           : GestureDetector(
                               onTap: () {
-                                viewModel.register();
+                                viewModel.register(
+                                  nameController.text,
+                                  ageController.text,
+                                  phNumberController.text,
+                                );
                               },
                               child: Opacity(
                                 opacity: 1,
