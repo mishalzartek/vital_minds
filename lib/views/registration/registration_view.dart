@@ -195,7 +195,7 @@ class RegistrationView extends StatelessWidget {
                                         onTap: () =>
                                             viewModel.navigateToLogin(),
                                         child: Text(
-                                          "Login",
+                                          "Sign In",
                                           style: TextStyle(
                                               fontFamily: 'Roboto',
                                               color: const Color(0xffffffff),

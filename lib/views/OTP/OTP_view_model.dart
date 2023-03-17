@@ -15,9 +15,9 @@ class OTPViewModel extends BaseViewModel {
     this.log = getLogger(this.runtimeType.toString());
   }
 
-  Future verify(bool login) async {
+  Future verify(bool login, bool registration) async {
     setBusy(true);
-    await _authenticationService.signInWithOTP(otpCode: otpController.text,login: login);
+    await _authenticationService.signInWithOTP(otpCode: otpController.text,login: login, registration: registration);
     setBusy(false);
   }
 }

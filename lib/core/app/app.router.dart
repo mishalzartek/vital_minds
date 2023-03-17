@@ -103,6 +103,7 @@ class StackedRouter extends RouterBase {
         builder: (context) => OTPView(
           key: args.key,
           login: args.login,
+          registration: args.registration,
         ),
         settings: data,
       );
@@ -200,7 +201,8 @@ class WorksheetsViewArguments {
 class OTPViewArguments {
   final Key key;
   final bool login;
-  OTPViewArguments({this.login, this.key});
+  bool registration = true;
+  OTPViewArguments({this.login, this.key, this.registration});
 }
 
 class AnalyticsPageViewArguments {

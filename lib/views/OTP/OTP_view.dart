@@ -6,8 +6,8 @@ import 'dart:ui';
 
 class OTPView extends StatelessWidget {
   final bool login;
-  const OTPView({Key key, this.login}) : super(key: key);
-
+  const OTPView({Key key, this.login, this.registration}) : super(key: key);
+  final bool registration;
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery
@@ -127,7 +127,7 @@ class OTPView extends StatelessWidget {
                             ))
                             : GestureDetector(
                           onTap: () {
-                            viewModel.verify(login);
+                            viewModel.verify(login, registration);
                           },
                           child: Opacity(
                             opacity: 1,

@@ -20,6 +20,7 @@ class LoginViewModel extends BaseViewModel {
   FocusNode email = new FocusNode();
   List<double> op = [0.25, 0.25];
   FocusNode password = new FocusNode();
+  bool enabled = true;
 
   // int loginSwitch = 0;
   List<bool> flags = [false, false];
@@ -52,6 +53,11 @@ class LoginViewModel extends BaseViewModel {
         transition: 'rightToLeft');
   }
 
+  enabledTextField() {
+    enabled = phNumberController.text.characters.length > 11 ? false : true;
+    notifyListeners();
+  }
+
   String validateMobile(String value) {
     String patttern = r'(^(?:[+0]9)?[0-9]{10}$)';
     RegExp regExp = new RegExp(patttern);
@@ -65,29 +71,29 @@ class LoginViewModel extends BaseViewModel {
 
   Future login() async {
     setBusy(true);
-      var mobileNumberError = validateMobile(phNumberController.text);
-      log.e(mobileNumberError);
-      if (mobileNumberError == null) {
-        await authenticationService
-            .loginWithPhoneNumber(phoneNumber: '+91' + phNumberController.text)
-            .onError((error, stackTrace) {
-          log.e(error.toString());
-          setBusy(false);
-          Future.delayed(
-              Duration(milliseconds: 500),
-              () => Fluttertoast.showToast(
-                  timeInSecForIosWeb: 2, msg: error.toString()));
-        }).then((_) {
-          navigationService.navigateTo(Routes.otpViewRoute,
-              arguments: OTPViewArguments(login: true));
-        });
-      } else {
+    var mobileNumberError = validateMobile(phNumberController.text);
+    log.e(mobileNumberError);
+    if (mobileNumberError == null) {
+      await authenticationService
+          .loginWithPhoneNumber(phoneNumber: '+91' + phNumberController.text)
+          .onError((error, stackTrace) {
+        log.e(error.toString());
         setBusy(false);
-        Fluttertoast.showToast(timeInSecForIosWeb: 2, msg: mobileNumberError);
-      }
-      Timer.periodic(Duration(seconds: 1), (timer) {
-        setBusy(false);
-        timer.cancel();
+        Future.delayed(
+            Duration(milliseconds: 500),
+            () => Fluttertoast.showToast(
+                timeInSecForIosWeb: 2, msg: error.toString()));
+      }).then((_) {
+        navigationService.navigateTo(Routes.otpViewRoute,
+            arguments: OTPViewArguments(login: true, registration: false));
       });
+    } else {
+      setBusy(false);
+      Fluttertoast.showToast(timeInSecForIosWeb: 2, msg: mobileNumberError);
     }
+    Timer.periodic(Duration(seconds: 1), (timer) {
+      setBusy(false);
+      timer.cancel();
+    });
+  }
 }

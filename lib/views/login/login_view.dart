@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -5,7 +6,12 @@ import 'package:stacked/stacked.dart';
 import 'package:vitalminds/widgets/dumb_widgets/Themes.dart';
 import 'login_view_model.dart';
 
-class LoginView extends StatelessWidget {
+class LoginView extends StatefulWidget {
+  @override
+  State<LoginView> createState() => _LoginViewState();
+}
+
+class _LoginViewState extends State<LoginView> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
@@ -82,44 +88,55 @@ class LoginView extends StatelessWidget {
                             Container(
                               width: width * 0.9,
                               height: height * 0.075,
-                              child: TextFormField(
-                                focusNode: viewModel.email,
-                                style: TextStyle(
-                                    fontFamily: 'Roboto',
-                                    // color: const Color(0xff273348),
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w600,
-                                    fontStyle: FontStyle.normal,
-                                    fontSize: 16.0),
-                                controller: viewModel.phNumberController,
-                                // onEditingComplete: () {
-                                //   viewModel.changeOpacity(
-                                //       0,
-                                //       viewModel.loginSwitch == 0
-                                //           ? viewModel.emailController
-                                //           : viewModel.phNumberController);
-                                //   FocusScope.of(context).nextFocus();
-                                // },
-                                keyboardType: TextInputType.number,
-                                decoration: new InputDecoration(
-                                  contentPadding: EdgeInsets.only(
-                                      top: height * 0.020,
-                                      bottom: height * 0.020,
-                                      left: width * 0.05),
-                                  border: InputBorder.none,
-                                  focusedBorder: InputBorder.none,
-                                  enabledBorder: InputBorder.none,
-                                  errorBorder: InputBorder.none,
-                                  disabledBorder: InputBorder.none,
-                                  labelText: "Phone Number",
-                                  labelStyle: TextStyle(
-                                      color: viewModel.flags[0]
-                                          ? Color.fromRGBO(39, 51, 72, 1)
-                                          : Colors.white,
-                                      fontFamily: 'Roboto',
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.w500),
-                                ),
+                              child: Stack(
+                                children: [
+                                  // IconButton(onPressed: (){}, icon: Icon(Icons.cancel_outlined)),
+                                  TextFormField(
+                                    onChanged: (value) {
+                                      //? disable textfield if user entered phone number more than 10 digitis
+                                      // viewModel.enabledTextField();
+                                      // log(viewModel.enabled.toString());
+                                    },
+                                    enabled: viewModel.enabled,
+                                    focusNode: viewModel.email,
+                                    style: TextStyle(
+                                        fontFamily: 'Roboto',
+                                        // color: const Color(0xff273348),
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w600,
+                                        fontStyle: FontStyle.normal,
+                                        fontSize: 16.0),
+                                    controller: viewModel.phNumberController,
+                                    // onEditingComplete: () {
+                                    //   viewModel.changeOpacity(
+                                    //       0,
+                                    //       viewModel.loginSwitch == 0
+                                    //           ? viewModel.emailController
+                                    //           : viewModel.phNumberController);
+                                    //   FocusScope.of(context).nextFocus();
+                                    // },
+                                    keyboardType: TextInputType.number,
+                                    decoration: new InputDecoration(
+                                      contentPadding: EdgeInsets.only(
+                                          top: height * 0.020,
+                                          bottom: height * 0.020,
+                                          left: width * 0.05),
+                                      border: InputBorder.none,
+                                      focusedBorder: InputBorder.none,
+                                      enabledBorder: InputBorder.none,
+                                      errorBorder: InputBorder.none,
+                                      disabledBorder: InputBorder.none,
+                                      labelText: "Phone Number",
+                                      labelStyle: TextStyle(
+                                          color: viewModel.flags[0]
+                                              ? Color.fromRGBO(39, 51, 72, 1)
+                                              : Colors.white,
+                                          fontFamily: 'Roboto',
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w500),
+                                    ),
+                                  ),
+                                ],
                               ),
                               decoration: BoxDecoration(
                                 borderRadius:
@@ -127,60 +144,57 @@ class LoginView extends StatelessWidget {
                                 color: const Color(0xffffffff)
                                     .withOpacity(viewModel.op[0]),
                               ),
-                            ), Column(
-                                    children: [
-                                      SizedBox(
-                                        height: height * 0.01,
-                                      ),
-                                      Container(
-                                          width: width * 0.9,
-                                          height: height * 0.075,
-                                          child: TextField(
-                                            obscureText: true,
-                                            style: TextStyle(
-                                                fontFamily: 'Roboto',
-                                                // color: const Color(0xff273348),
-                                                color: Colors.white,
-                                                fontWeight: FontWeight.w600,
-                                                fontStyle: FontStyle.normal,
-                                                fontSize: 16.0),
-                                            controller:
-                                                viewModel.passwordController,
-                                            // onSubmitted: (_) {
-                                            //   viewModel.changeOpacity(1,
-                                            //       viewModel.passwordController);
-                                            //   FocusScope.of(context).unfocus();
-                                            // },
-                                            decoration: new InputDecoration(
-                                                contentPadding: EdgeInsets.only(
-                                                    top: height * 0.020,
-                                                    bottom: height * 0.020,
-                                                    left: width * 0.05),
-                                                border: InputBorder.none,
-                                                focusedBorder: InputBorder.none,
-                                                enabledBorder: InputBorder.none,
-                                                errorBorder: InputBorder.none,
-                                                disabledBorder:
-                                                    InputBorder.none,
-                                                labelText: "Password",
-                                                labelStyle: TextStyle(
-                                                    color: viewModel.flags[1]
-                                                        ? Color.fromRGBO(
-                                                            39, 51, 72, 1)
-                                                        : Colors.white,
-                                                    fontFamily: 'Roboto',
-                                                    fontSize: 15,
-                                                    fontWeight:
-                                                        FontWeight.w500)),
-                                          ),
-                                          decoration: BoxDecoration(
-                                              borderRadius: BorderRadius.all(
-                                                  Radius.circular(6)),
-                                              color: const Color(0xffffffff)
-                                                  .withOpacity(
-                                                      viewModel.op[1]))),
-                                    ],
-                                  ),
+                            ),
+                            Column(
+                              children: [
+                                SizedBox(
+                                  height: height * 0.01,
+                                ),
+                                Container(
+                                    width: width * 0.9,
+                                    height: height * 0.075,
+                                    child: TextField(
+                                      obscureText: true,
+                                      style: TextStyle(
+                                          fontFamily: 'Roboto',
+                                          // color: const Color(0xff273348),
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w600,
+                                          fontStyle: FontStyle.normal,
+                                          fontSize: 16.0),
+                                      controller: viewModel.passwordController,
+                                      // onSubmitted: (_) {
+                                      //   viewModel.changeOpacity(1,
+                                      //       viewModel.passwordController);
+                                      //   FocusScope.of(context).unfocus();
+                                      // },
+                                      decoration: new InputDecoration(
+                                          contentPadding: EdgeInsets.only(
+                                              top: height * 0.020,
+                                              bottom: height * 0.020,
+                                              left: width * 0.05),
+                                          border: InputBorder.none,
+                                          focusedBorder: InputBorder.none,
+                                          enabledBorder: InputBorder.none,
+                                          errorBorder: InputBorder.none,
+                                          disabledBorder: InputBorder.none,
+                                          labelText: "Password",
+                                          labelStyle: TextStyle(
+                                              color: viewModel.flags[1]
+                                                  ? Color.fromRGBO(
+                                                      39, 51, 72, 1)
+                                                  : Colors.white,
+                                              fontFamily: 'Roboto',
+                                              fontSize: 15,
+                                              fontWeight: FontWeight.w500)),
+                                    ),
+                                    decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(6)),
+                                        color: const Color(0xffffffff)
+                                            .withOpacity(viewModel.op[1]))),
+                              ],
+                            ),
                             // GestureDetector(
                             //   onTap: () {},
                             //   child: Container(
@@ -207,24 +221,25 @@ class LoginView extends StatelessWidget {
                             Container(
                               width: width * 0.9,
                               child: Row(
-                                mainAxisAlignment:  MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   // if (viewModel.loginSwitch == 0)
-                                    GestureDetector(
-                                      onTap: () => viewModel.forgotPassword(),
-                                      child: Padding(
-                                        padding:
-                                            EdgeInsets.only(top: height * 0.08),
-                                        child: Text("Forgot Password",
-                                            style: TextStyle(
-                                                fontFamily: 'Roboto',
-                                                color: const Color(0xffffffff),
-                                                fontWeight: FontWeight.w700,
-                                                fontStyle: FontStyle.normal,
-                                                fontSize: 14.0),
-                                            textAlign: TextAlign.left),
-                                      ),
+                                  GestureDetector(
+                                    onTap: () => viewModel.forgotPassword(),
+                                    child: Padding(
+                                      padding:
+                                          EdgeInsets.only(top: height * 0.08),
+                                      child: Text("Forgot Password",
+                                          style: TextStyle(
+                                              fontFamily: 'Roboto',
+                                              color: const Color(0xffffffff),
+                                              fontWeight: FontWeight.w700,
+                                              fontStyle: FontStyle.normal,
+                                              fontSize: 14.0),
+                                          textAlign: TextAlign.left),
                                     ),
+                                  ),
                                   Row(
                                     children: [
                                       Padding(
@@ -245,7 +260,7 @@ class LoginView extends StatelessWidget {
                                         child: Padding(
                                           padding: EdgeInsets.only(
                                               top: height * 0.08),
-                                          child: Text("Register",
+                                          child: Text("Regšister",
                                               style: TextStyle(
                                                   fontFamily: 'Roboto',
                                                   color:
