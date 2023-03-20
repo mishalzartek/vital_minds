@@ -66,40 +66,40 @@ class EditSettingsPageView extends StatelessWidget {
                                           )),
                                     ],
                                   ),
-                                  Container(
-                                    width: width * 0.9,
-                                    padding:
-                                        EdgeInsets.symmetric(horizontal: width * 0.03, vertical: height * 0.02),
-                                    margin: EdgeInsets.only(top: height * 0.03),
-                                    decoration: BoxDecoration(
-                                      borderRadius:
-                                          BorderRadius.all(Radius.circular(10)),
-                                      color: Colors.white.withOpacity(0.1),
-                                    ),
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceEvenly,
-                                      children: [
-                                        Text("Email ID",
-                                            style: TextStyle(
-                                                color: Colors.white,
-                                                fontSize: width / 24,
-                                                fontFamily: 'Roboto',
-                                                fontWeight: FontWeight.w400)),
-                                        Text(
-                                            viewModel.email == null
-                                                ? "Add Now"
-                                                : viewModel.email,
-                                            style: TextStyle(
-                                                color: Colors.white.withOpacity(0.6),
-                                                fontSize: width / 26,
-                                                fontFamily: 'Roboto',
-                                                fontWeight: FontWeight.w400))
-                                      ],
-                                    ),
-                                  ),
+                                  // Container(
+                                  //   width: width * 0.9,
+                                  //   padding:
+                                  //       EdgeInsets.symmetric(horizontal: width * 0.03, vertical: height * 0.02),
+                                  //   margin: EdgeInsets.only(top: height * 0.03),
+                                  //   decoration: BoxDecoration(
+                                  //     borderRadius:
+                                  //         BorderRadius.all(Radius.circular(10)),
+                                  //     color: Colors.white.withOpacity(0.1),
+                                  //   ),
+                                  //   child: Column(
+                                  //     crossAxisAlignment:
+                                  //         CrossAxisAlignment.start,
+                                  //     mainAxisAlignment:
+                                  //         MainAxisAlignment.spaceEvenly,
+                                  //     children: [
+                                  //       Text("Email ID",
+                                  //           style: TextStyle(
+                                  //               color: Colors.white,
+                                  //               fontSize: width / 24,
+                                  //               fontFamily: 'Roboto',
+                                  //               fontWeight: FontWeight.w400)),
+                                  //       Text(
+                                  //           viewModel.email == null
+                                  //               ? "Add Now"
+                                  //               : viewModel.email,
+                                  //           style: TextStyle(
+                                  //               color: Colors.white.withOpacity(0.6),
+                                  //               fontSize: width / 26,
+                                  //               fontFamily: 'Roboto',
+                                  //               fontWeight: FontWeight.w400))
+                                  //     ],
+                                  //   ),
+                                  // ),
                                   GestureDetector(
                                     onTap: () {
                                       viewModel.inputDialog(
@@ -141,42 +141,42 @@ class EditSettingsPageView extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                  GestureDetector(
-                                    onTap: () => viewModel.passwordDialog(
-                                        context, width, height),
-                                    child: Container(
-                                      width: width * 0.9,
-                                      padding:EdgeInsets.symmetric(horizontal: width * 0.03, vertical: height * 0.02),
-                                      margin:
-                                          EdgeInsets.only(top: height * 0.02),
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(10)),
-                                        color:
-                                            Colors.white.withOpacity(0.1),
-                                      ),
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
-                                        children: [
-                                          Text("Password",
-                                              style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontSize: width / 24,
-                                                  fontFamily: 'Roboto',
-                                                  fontWeight: FontWeight.w400)),
-                                          Text("**************",
-                                              style: TextStyle(
-                                                  color: Colors.white.withOpacity(0.6),
-                                                  fontSize: width / 25,
-                                                  fontFamily: 'Roboto',
-                                                  fontWeight: FontWeight.w400)),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
+                                  // GestureDetector(
+                                  //   onTap: () => viewModel.passwordDialog(
+                                  //       context, width, height),
+                                  //   child: Container(
+                                  //     width: width * 0.9,
+                                  //     padding:EdgeInsets.symmetric(horizontal: width * 0.03, vertical: height * 0.02),
+                                  //     margin:
+                                  //         EdgeInsets.only(top: height * 0.02),
+                                  //     decoration: BoxDecoration(
+                                  //       borderRadius: BorderRadius.all(
+                                  //           Radius.circular(10)),
+                                  //       color:
+                                  //           Colors.white.withOpacity(0.1),
+                                  //     ),
+                                  //     child: Column(
+                                  //       crossAxisAlignment:
+                                  //           CrossAxisAlignment.start,
+                                  //       mainAxisAlignment:
+                                  //           MainAxisAlignment.spaceEvenly,
+                                  //       children: [
+                                  //         Text("Password",
+                                  //             style: TextStyle(
+                                  //                 color: Colors.white,
+                                  //                 fontSize: width / 24,
+                                  //                 fontFamily: 'Roboto',
+                                  //                 fontWeight: FontWeight.w400)),
+                                  //         Text("**************",
+                                  //             style: TextStyle(
+                                  //                 color: Colors.white.withOpacity(0.6),
+                                  //                 fontSize: width / 25,
+                                  //                 fontFamily: 'Roboto',
+                                  //                 fontWeight: FontWeight.w400)),
+                                  //       ],
+                                  //     ),
+                                  //   ),
+                                  // ),
                                   Container(
                                     margin: EdgeInsets.only(top: height * 0.03),
                                     alignment: Alignment.centerLeft,

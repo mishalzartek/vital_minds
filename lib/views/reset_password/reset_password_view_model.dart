@@ -35,17 +35,17 @@ class ResetViewModel extends BaseViewModel {
     notifyListeners();
   }
 
-  void forgotPassword() async {
-    if (passwordController.text != null)
-      try {
-        await _authenticationService.forgotPassword(passwordController.text);
-        Fluttertoast.showToast(
-            msg: "Please check your email and reset your password");
-      } on FirebaseException catch (e) {
-        log.e(e.message);
-        Fluttertoast.showToast(msg: e.message);
-      }
-  }
+  // void forgotPassword() async {
+  //   if (passwordController.text != null)
+  //     try {
+  //       await _authenticationService.forgotPassword(passwordController.text);
+  //       Fluttertoast.showToast(
+  //           msg: "Please check your email and reset your password");
+  //     } on FirebaseException catch (e) {
+  //       log.e(e.message);
+  //       Fluttertoast.showToast(msg: e.message);
+  //     }
+  // }
 
 
   void navigateToRegister() {

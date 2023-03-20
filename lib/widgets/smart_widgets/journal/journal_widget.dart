@@ -40,7 +40,7 @@ class JournalWidget extends StatelessWidget {
                 Container(
                   height: height * 0.02,
                 ),
-                PeopleAndRelationship(viewModel: viewModel),
+                // PeopleAndRelationship(viewModel: viewModel),
                 Container(
                   height: height * 0.02,
                 ),

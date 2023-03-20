@@ -225,20 +225,10 @@ class _LoginViewState extends State<LoginView> {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   // if (viewModel.loginSwitch == 0)
-                                  GestureDetector(
-                                    onTap: () => viewModel.forgotPassword(),
-                                    child: Padding(
-                                      padding:
-                                          EdgeInsets.only(top: height * 0.08),
-                                      child: Text("Forgot Password",
-                                          style: TextStyle(
-                                              fontFamily: 'Roboto',
-                                              color: const Color(0xffffffff),
-                                              fontWeight: FontWeight.w700,
-                                              fontStyle: FontStyle.normal,
-                                              fontSize: 14.0),
-                                          textAlign: TextAlign.left),
-                                    ),
+                                  Padding(
+                                    padding:
+                                        EdgeInsets.only(top: height * 0.08),
+                                    child: SizedBox()
                                   ),
                                   Row(
                                     children: [

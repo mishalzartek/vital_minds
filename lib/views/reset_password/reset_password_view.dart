@@ -168,47 +168,13 @@ class ResetView extends StatelessWidget {
                         // SizedBox(
                         //   height: height * 0.05,
                         // ),
-                        viewModel.isBusy
-                            ? Center(
+                        Center(
                             child: SpinKitWanderingCubes(
                               color: Themes.color,
                               size: 40,
                               duration: Duration(milliseconds: 1200),
                             ))
-                            : GestureDetector(
-                          onTap: () {
-                            FocusScope.of(context).unfocus();
-                            viewModel.forgotPassword();
-                          },
-                          child: Opacity(
-                            opacity: 1,
-                            child: Container(
-                              margin: EdgeInsets.only(
-                                  top: height * 0.07,
-                                  bottom: height * 0.03),
-                              width: width * 0.83,
-                              height: height * 0.07,
-                              decoration: BoxDecoration(
-                                  borderRadius:
-                                  BorderRadius.all(Radius.circular(6)),
-                                  color: Color(0xff5a5ed0)),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment:
-                                CrossAxisAlignment.center,
-                                children: [
-                                  Text("RESET PASSWORD",
-                                      style: TextStyle(
-                                          color: const Color(0xffffffff),
-                                          fontWeight: FontWeight.w700,
-                                          fontStyle: FontStyle.normal,
-                                          fontSize: 16.0),
-                                      textAlign: TextAlign.left),
-                                ],
-                              ),
-                            ),
-                          ),
-                        )
+                            
                       ],
                     ),
                   ),

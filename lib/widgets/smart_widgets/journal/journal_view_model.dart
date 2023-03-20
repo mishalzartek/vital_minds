@@ -124,13 +124,14 @@ class JournalViewModel extends FutureViewModel {
     notifyListeners();
   }
 
-  void goToEditRelationshipsPage(viewModel, int index) {
-    navigationService.navigateToView(EditPeopleAndRelationshipsWidget(
-      viewModel: viewModel,
-      currentDate: selectedDate,
-      position: index,
-    ));
-  }
+  // void goToEditRelationshipsPage(viewModel, int index) {
+  //   navigationService.navigateToView(
+  //     EditPeopleAndRelationshipsWidget(
+  //     viewModel: viewModel,
+  //     currentDate: selectedDate,
+  //     position: index,
+  //   ));
+  // }
 
   //All functions related to thought of the day
   void addThoughtOfTheDayController() {

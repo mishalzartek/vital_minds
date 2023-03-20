@@ -58,13 +58,13 @@ class AuthenticationService {
     }
   }
 
-  Future forgotPassword(String email) async {
-    try {
-      await _firebaseAuth.sendPasswordResetEmail(email: email);
-    } catch (e) {
-      rethrow;
-    }
-  }
+  // Future forgotPassword(String email) async {
+  //   try {
+  //     await _firebaseAuth.sendPasswordResetEmail(email: email);
+  //   } catch (e) {
+  //     rethrow;
+  //   }
+  // }
 
   Future<void> loginWithPhoneNumber(
       {@required String phoneNumber, String age, String name}) async {

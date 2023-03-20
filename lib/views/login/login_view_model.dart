@@ -43,9 +43,9 @@ class LoginViewModel extends BaseViewModel {
     notifyListeners();
   }
 
-  void forgotPassword() async {
-    navigationService.navigateToView(ResetView());
-  }
+  // void forgotPassword() async {
+  //   navigationService.navigateToView(ResetView());
+  // }
 
   void navigateToRegister() {
     // navigationService.navigateTo(Routes.registrationViewRoute);

@@ -51,7 +51,7 @@ class PeopleAndRelationship extends StatelessWidget {
                 GestureDetector(
                   onTap: () {
                     viewModel.cancelNotification();
-                    viewModel.goToEditRelationshipsPage(viewModel, 0);
+                    // viewModel.goToEditRelationshipsPage(viewModel, 0);
                   },
                   child: Text(
                           viewModel.peopleAndRelationshipsArray.length == 0
@@ -111,8 +111,8 @@ class PeopleAndRelationship extends StatelessWidget {
                                   return GestureDetector(
                                     onTap: () {
                                       viewModel.cancelNotification();
-                                      viewModel.goToEditRelationshipsPage(
-                                          viewModel, index);
+                                      // viewModel.goToEditRelationshipsPage(
+                                          // viewModel, index);
                                     },
                                     child: Container(
                                       width: width,
