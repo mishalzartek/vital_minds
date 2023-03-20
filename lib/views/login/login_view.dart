@@ -145,56 +145,56 @@ class _LoginViewState extends State<LoginView> {
                                     .withOpacity(viewModel.op[0]),
                               ),
                             ),
-                            Column(
-                              children: [
-                                SizedBox(
-                                  height: height * 0.01,
-                                ),
-                                Container(
-                                    width: width * 0.9,
-                                    height: height * 0.075,
-                                    child: TextField(
-                                      obscureText: true,
-                                      style: TextStyle(
-                                          fontFamily: 'Roboto',
-                                          // color: const Color(0xff273348),
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w600,
-                                          fontStyle: FontStyle.normal,
-                                          fontSize: 16.0),
-                                      controller: viewModel.passwordController,
-                                      // onSubmitted: (_) {
-                                      //   viewModel.changeOpacity(1,
-                                      //       viewModel.passwordController);
-                                      //   FocusScope.of(context).unfocus();
-                                      // },
-                                      decoration: new InputDecoration(
-                                          contentPadding: EdgeInsets.only(
-                                              top: height * 0.020,
-                                              bottom: height * 0.020,
-                                              left: width * 0.05),
-                                          border: InputBorder.none,
-                                          focusedBorder: InputBorder.none,
-                                          enabledBorder: InputBorder.none,
-                                          errorBorder: InputBorder.none,
-                                          disabledBorder: InputBorder.none,
-                                          labelText: "Password",
-                                          labelStyle: TextStyle(
-                                              color: viewModel.flags[1]
-                                                  ? Color.fromRGBO(
-                                                      39, 51, 72, 1)
-                                                  : Colors.white,
-                                              fontFamily: 'Roboto',
-                                              fontSize: 15,
-                                              fontWeight: FontWeight.w500)),
-                                    ),
-                                    decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.all(
-                                            Radius.circular(6)),
-                                        color: const Color(0xffffffff)
-                                            .withOpacity(viewModel.op[1]))),
-                              ],
-                            ),
+                            // Column(
+                            //   children: [
+                            //     SizedBox(
+                            //       height: height * 0.01,
+                            //     ),
+                            //     Container(
+                            //         width: width * 0.9,
+                            //         height: height * 0.075,
+                            //         child: TextField(
+                            //           obscureText: true,
+                            //           style: TextStyle(
+                            //               fontFamily: 'Roboto',
+                            //               // color: const Color(0xff273348),
+                            //               color: Colors.white,
+                            //               fontWeight: FontWeight.w600,
+                            //               fontStyle: FontStyle.normal,
+                            //               fontSize: 16.0),
+                            //           controller: viewModel.passwordController,
+                            //           // onSubmitted: (_) {
+                            //           //   viewModel.changeOpacity(1,
+                            //           //       viewModel.passwordController);
+                            //           //   FocusScope.of(context).unfocus();
+                            //           // },
+                            //           decoration: new InputDecoration(
+                            //               contentPadding: EdgeInsets.only(
+                            //                   top: height * 0.020,
+                            //                   bottom: height * 0.020,
+                            //                   left: width * 0.05),
+                            //               border: InputBorder.none,
+                            //               focusedBorder: InputBorder.none,
+                            //               enabledBorder: InputBorder.none,
+                            //               errorBorder: InputBorder.none,
+                            //               disabledBorder: InputBorder.none,
+                            //               labelText: "Password",
+                            //               labelStyle: TextStyle(
+                            //                   color: viewModel.flags[1]
+                            //                       ? Color.fromRGBO(
+                            //                           39, 51, 72, 1)
+                            //                       : Colors.white,
+                            //                   fontFamily: 'Roboto',
+                            //                   fontSize: 15,
+                            //                   fontWeight: FontWeight.w500)),
+                            //         ),
+                            //         decoration: BoxDecoration(
+                            //             borderRadius: BorderRadius.all(
+                            //                 Radius.circular(6)),
+                            //             color: const Color(0xffffffff)
+                            //                 .withOpacity(viewModel.op[1]))),
+                            //   ],
+                            // ),
                             // GestureDetector(
                             //   onTap: () {},
                             //   child: Container(
@@ -260,7 +260,7 @@ class _LoginViewState extends State<LoginView> {
                                         child: Padding(
                                           padding: EdgeInsets.only(
                                               top: height * 0.08),
-                                          child: Text("Regšister",
+                                          child: Text("Register",
                                               style: TextStyle(
                                                   fontFamily: 'Roboto',
                                                   color:

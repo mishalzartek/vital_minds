@@ -103,6 +103,7 @@ class AuthenticationService {
   Future<void> _smsCodeSent(String verificationId, List<int> code) async {
     log.i('_smsCodeSent called');
     _smsVerificationCode = verificationId;
+    print('code : $code || verification ID : $verificationId  || _smsVerificationCode = $_smsVerificationCode');
   }
 
   Future signInWithOTP({String otpCode, bool login, bool registration}) async {
