@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart' as firebaseAuth;
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:logger/logger.dart';
@@ -77,14 +78,15 @@ class AuthenticationService {
       await _firebaseAuth.verifyPhoneNumber(
         phoneNumber: "$phoneNumber",
         verificationCompleted: (PhoneAuthCredential credential) async {
-          await _firebaseAuth.signInWithCredential(credential).then((value) {
-            log.e("You are logged in successfully");
-          });
+          // await _firebaseAuth.signInWithCredential(credential).then((value) {
+          //   log.e("You are logged in successfully");
+          // });
         },
         verificationFailed: (FirebaseAuthException e) {
+          FirebaseCrashlytics.instance.recordError(e, e.stackTrace);
           print(e);
           Fluttertoast.showToast(
-            msg: "Verification Failed try Again",
+            msg: e.toString(),
             gravity: ToastGravity.BOTTOM,
             timeInSecForIosWeb: 2,
           );
@@ -103,7 +105,8 @@ class AuthenticationService {
   Future<void> _smsCodeSent(String verificationId, List<int> code) async {
     log.i('_smsCodeSent called');
     _smsVerificationCode = verificationId;
-    print('code : $code || verification ID : $verificationId  || _smsVerificationCode = $_smsVerificationCode');
+    print(
+        'code : $code || verification ID : $verificationId  || _smsVerificationCode = $_smsVerificationCode');
   }
 
   Future signInWithOTP({String otpCode, bool login, bool registration}) async {
@@ -123,39 +126,51 @@ class AuthenticationService {
               await userCredential.user.delete();
               Fluttertoast.showToast(
                   timeInSecForIosWeb: 2,
-                  msg: "U need to register first!",
+                  msg: "You need to register first!",
                   gravity: ToastGravity.BOTTOM);
               await _navigationService.replaceWithTransition(LoginView(),
                   transitionStyle: Transition.rightToLeft);
             }
-          }
-        }
-        if (userCredential.user != null) {
-          user = userCredential.user;
-          Fluttertoast.showToast(
-              timeInSecForIosWeb: 2,
-              msg: "Authentication successful!",
-              gravity: ToastGravity.BOTTOM);
-          if (await _firestoreService.isUserDataPresent(user.uid)) {
-            await populateCurrentUser(user);
-
-            await _navigationService.replaceWithTransition(SplashView(),
-                transitionStyle: Transition.rightToLeft);
-          } else {
-            user.updateDisplayName(name).whenComplete(() async {
-              print("profile updated");
-              _firestoreService.createUser(
-                  UserModel(age: age, phno: user.phoneNumber), user.uid);
-
-              await _navigationService.replaceWithTransition(SplashView(),
+          } else if (registration) {
+            if (!userCredential.additionalUserInfo.isNewUser) {
+              await userCredential.user.delete();
+              Fluttertoast.showToast(
+                  timeInSecForIosWeb: 2,
+                  msg: "Account with this phone number already exist!",
+                  gravity: ToastGravity.BOTTOM);
+              await _navigationService.replaceWithTransition(LoginView(),
                   transitionStyle: Transition.rightToLeft);
-            });
+            } else {
+              if (userCredential.user != null) {
+                user = userCredential.user;
+                Fluttertoast.showToast(
+                    timeInSecForIosWeb: 2,
+                    msg: "Authentication successful!",
+                    gravity: ToastGravity.BOTTOM);
+                if (await _firestoreService.isUserDataPresent(user.uid)) {
+                  await populateCurrentUser(user);
+
+                  await _navigationService.replaceWithTransition(SplashView(),
+                      transitionStyle: Transition.rightToLeft);
+                } else {
+                  user.updateDisplayName(name).whenComplete(() async {
+                    print("profile updated");
+                    _firestoreService.createUser(
+                        UserModel(age: age, phno: user.phoneNumber), user.uid);
+
+                    await _navigationService.replaceWithTransition(SplashView(),
+                        transitionStyle: Transition.rightToLeft);
+                  });
+                }
+              }
+            }
           }
         }
       } catch (e) {
         log.e(e.toString());
-        _snackbarService.showSnackbar(
-            message: 'Something has gone wrong, please try later');
+        _snackbarService.showSnackbar(message: e.toString());
+
+        // message: 'Something has gone wrong, please try later');
       }
     }
   }

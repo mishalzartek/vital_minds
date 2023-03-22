@@ -1,5 +1,7 @@
 import 'dart:developer';
+import 'dart:io';
 import 'dart:ui';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:stacked/stacked.dart';
@@ -245,8 +247,10 @@ class _LoginViewState extends State<LoginView> {
                                             textAlign: TextAlign.left),
                                       ),
                                       GestureDetector(
-                                        onTap: () =>
-                                            viewModel.navigateToRegister(),
+                                        onTap: () {
+                                        // FirebaseCrashlytics.instance.crash(),
+                                            viewModel.navigateToRegister();
+                                        },
                                         child: Padding(
                                           padding: EdgeInsets.only(
                                               top: height * 0.08),

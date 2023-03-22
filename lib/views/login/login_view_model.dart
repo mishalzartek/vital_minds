@@ -14,9 +14,7 @@ import 'package:vitalminds/views/reset_password/reset_password_view.dart';
 
 class LoginViewModel extends BaseViewModel {
   Logger log;
-  // TextEditingController emailController = new TextEditingController();
   TextEditingController phNumberController = new TextEditingController();
-  // TextEditingController passwordController = new TextEditingController();
   FocusNode email = new FocusNode();
   List<double> op = [0.25, 0.25];
   FocusNode password = new FocusNode();

@@ -6,16 +6,15 @@ import 'package:stacked/stacked.dart';
 import 'package:vitalminds/views/registration/registration_view_model.dart';
 import 'package:vitalminds/views/registration/widgets/head_widget.dart';
 import 'package:vitalminds/widgets/dumb_widgets/Themes.dart';
-  TextEditingController phNumberController = TextEditingController();
-    TextEditingController ageController = TextEditingController();
-    TextEditingController nameController = TextEditingController();
+
+
+
 // ignore: must_be_immutable
 class RegistrationView extends StatelessWidget {
   RegistrationView({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
     double op1 = 0.25;
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
@@ -57,7 +56,7 @@ class RegistrationView extends StatelessWidget {
                                     fontWeight: FontWeight.w600,
                                     fontStyle: FontStyle.normal,
                                     fontSize: 16.0),
-                                controller: nameController,
+                                controller: viewModel.nameController,
                                 decoration: new InputDecoration(
                                     contentPadding: EdgeInsets.only(
                                         top: height * 0.020,
@@ -94,7 +93,7 @@ class RegistrationView extends StatelessWidget {
                                     fontWeight: FontWeight.w600,
                                     fontStyle: FontStyle.normal,
                                     fontSize: 16.0),
-                                controller: ageController,
+                                controller:viewModel. ageController,
                                 keyboardType: TextInputType.number,
                                 decoration: new InputDecoration(
                                     contentPadding: EdgeInsets.only(
@@ -132,7 +131,7 @@ class RegistrationView extends StatelessWidget {
                                     fontWeight: FontWeight.w600,
                                     fontStyle: FontStyle.normal,
                                     fontSize: 16.0),
-                                controller: phNumberController,
+                                controller: viewModel.phNumberController,
                                 keyboardType: TextInputType.number,
                                 decoration: new InputDecoration(
                                     prefixText: "+91",
@@ -226,9 +225,9 @@ class RegistrationView extends StatelessWidget {
                           : GestureDetector(
                               onTap: () {
                                 viewModel.register(
-                                  nameController.text,
-                                  ageController.text,
-                                  phNumberController.text,
+                                  viewModel.nameController.text,
+                                  viewModel.ageController.text,
+                                  viewModel.phNumberController.text,
                                 );
                               },
                               child: Opacity(

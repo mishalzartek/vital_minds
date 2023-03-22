@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:stacked_services/stacked_services.dart';
@@ -13,7 +14,7 @@ import 'core/app/app.router.dart';
 import 'package:flutter/services.dart';
 ImageProvider myImage;
 void main() async {
-  final binding = WidgetsFlutterBinding.ensureInitialized();
+  runZonedGuarded<Future<void>>(() async {final binding = WidgetsFlutterBinding.ensureInitialized();
   binding.addPostFrameCallback((_)
   async{
     BuildContext context = binding.renderViewElement;
@@ -30,8 +31,11 @@ void main() async {
 
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
       .then((_) {
+        FirebaseCrashlytics.instance.recordFlutterError;
     runApp(MyApp());
   });
+  }, (error, stack) => FirebaseCrashlytics.instance.recordError(error, stack));
+  
 }
 
 class MyApp extends StatefulWidget {

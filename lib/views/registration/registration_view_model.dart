@@ -11,11 +11,9 @@ import 'package:vitalminds/views/login/login_view.dart';
 
 class RegistrationViewModel extends BaseViewModel {
   Logger log;
-  // TextEditingController emailController = new TextEditingController();
-  // TextEditingController phNumberController = new TextEditingController();
-  // TextEditingController passwordController = new TextEditingController();
-  // TextEditingController nameController = new TextEditingController();
-  // TextEditingController ageController = new TextEditingController();
+TextEditingController phNumberController = TextEditingController();
+TextEditingController ageController = TextEditingController();
+TextEditingController nameController = TextEditingController();
 
   // int loginSwitch = 0;
   // String switchText = "Use Phone Number";
@@ -43,7 +41,7 @@ class RegistrationViewModel extends BaseViewModel {
       } else {
         authenticationService
             .loginWithPhoneNumber(
-          phoneNumber: "+91" + phoneNumber ,
+          phoneNumber: "+91" + phoneNumber,
           age: age,
           name: name,
         )
@@ -55,7 +53,7 @@ class RegistrationViewModel extends BaseViewModel {
               () => Fluttertoast.showToast(
                   timeInSecForIosWeb: 2, msg: error.toString()));
         }).then((_) => navigationService.navigateTo(Routes.otpViewRoute,
-                arguments: OTPViewArguments(login: false)));
+                arguments: OTPViewArguments(login: false, registration: true)));
       }
   }
 }
