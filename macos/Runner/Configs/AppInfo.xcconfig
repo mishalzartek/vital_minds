@@ -8,7 +8,7 @@
 PRODUCT_NAME = vital_minds
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.pyramid.vitalMinds
+PRODUCT_BUNDLE_IDENTIFIER = com.pyramid.vitalminds
 
 // The copyright displayed in application information
 PRODUCT_COPYRIGHT = Copyright © 2023 com.pyramid. All rights reserved.

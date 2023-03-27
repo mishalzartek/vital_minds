@@ -1,7 +1,7 @@
 name: vitalminds
 description: A new Flutter project.
 publish_to: none
-version: 1.1.04+17
+version: 1.4.2+46
 environment:
   sdk: ">=2.3.0 <3.0.0"
 dependencies:

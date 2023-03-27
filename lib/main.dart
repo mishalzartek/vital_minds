@@ -15,6 +15,7 @@ import 'package:flutter/services.dart';
 ImageProvider myImage;
 void main() async {
   runZonedGuarded<Future<void>>(() async {final binding = WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   binding.addPostFrameCallback((_)
   async{
     BuildContext context = binding.renderViewElement;
@@ -27,7 +28,7 @@ void main() async {
   await ThemeManager.initialise();
   setupLocator();
   setupDialogUi();
-  await Firebase.initializeApp();
+
 
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
       .then((_) {
