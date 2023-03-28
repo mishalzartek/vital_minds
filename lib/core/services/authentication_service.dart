@@ -121,22 +121,13 @@ class AuthenticationService {
         firebaseAuth.UserCredential userCredential =
             await _firebaseAuth.signInWithCredential(_authCredential);
         if (registration != null) {
+          print('registration is not null');
           if (!registration) {
             if (userCredential.additionalUserInfo.isNewUser) {
               await userCredential.user.delete();
               Fluttertoast.showToast(
                   timeInSecForIosWeb: 2,
                   msg: "You need to register first!",
-                  gravity: ToastGravity.BOTTOM);
-              await _navigationService.replaceWithTransition(LoginView(),
-                  transitionStyle: Transition.rightToLeft);
-            }
-          } else if (registration) {
-            if (!userCredential.additionalUserInfo.isNewUser) {
-              await userCredential.user.delete();
-              Fluttertoast.showToast(
-                  timeInSecForIosWeb: 2,
-                  msg: "Account with this phone number already exist!",
                   gravity: ToastGravity.BOTTOM);
               await _navigationService.replaceWithTransition(LoginView(),
                   transitionStyle: Transition.rightToLeft);
@@ -147,6 +138,8 @@ class AuthenticationService {
                     timeInSecForIosWeb: 2,
                     msg: "Authentication successful!",
                     gravity: ToastGravity.BOTTOM);
+                await _navigationService.replaceWithTransition(SplashView(),
+                    transitionStyle: Transition.rightToLeft);
                 if (await _firestoreService.isUserDataPresent(user.uid)) {
                   await populateCurrentUser(user);
 
@@ -162,6 +155,41 @@ class AuthenticationService {
                         transitionStyle: Transition.rightToLeft);
                   });
                 }
+              }
+            }
+          } else if (registration) {
+            print('registration is true');
+            if (!userCredential.additionalUserInfo.isNewUser) {
+              await userCredential.user.delete();
+              Fluttertoast.showToast(
+                  timeInSecForIosWeb: 2,
+                  msg: "Account with this phone number already exist!",
+                  gravity: ToastGravity.BOTTOM);
+              await _navigationService.replaceWithTransition(LoginView(),
+                  transitionStyle: Transition.rightToLeft);
+            }
+          } else {
+            print('registration is not true');
+            if (userCredential.user != null) {
+              user = userCredential.user;
+              Fluttertoast.showToast(
+                  timeInSecForIosWeb: 2,
+                  msg: "Authentication successful!",
+                  gravity: ToastGravity.BOTTOM);
+              if (await _firestoreService.isUserDataPresent(user.uid)) {
+                await populateCurrentUser(user);
+
+                await _navigationService.replaceWithTransition(SplashView(),
+                    transitionStyle: Transition.rightToLeft);
+              } else {
+                user.updateDisplayName(name).whenComplete(() async {
+                  print("profile updated");
+                  _firestoreService.createUser(
+                      UserModel(age: age, phno: user.phoneNumber), user.uid);
+
+                  await _navigationService.replaceWithTransition(SplashView(),
+                      transitionStyle: Transition.rightToLeft);
+                });
               }
             }
           }
