@@ -121,7 +121,7 @@ class AuthenticationService {
         firebaseAuth.UserCredential userCredential =
             await _firebaseAuth.signInWithCredential(_authCredential);
         if (registration != null) {
-          print('registration is not null');
+          print('registration not null');
           if (!registration) {
             if (userCredential.additionalUserInfo.isNewUser) {
               await userCredential.user.delete();
@@ -158,7 +158,7 @@ class AuthenticationService {
               }
             }
           } else if (registration) {
-            print('registration is true');
+            print('registration $registration');
             if (!userCredential.additionalUserInfo.isNewUser) {
               await userCredential.user.delete();
               Fluttertoast.showToast(
@@ -167,6 +167,20 @@ class AuthenticationService {
                   gravity: ToastGravity.BOTTOM);
               await _navigationService.replaceWithTransition(LoginView(),
                   transitionStyle: Transition.rightToLeft);
+            } else {
+              if (await _firestoreService.isUserDataPresent(user.uid)) {
+                await populateCurrentUser(user);
+                // await _navigationService.navigateTo(Routes.splashViewRoute);
+                await _navigationService.replaceWithTransition(SplashView(),
+                    transitionStyle: Transition.rightToLeft);
+              } else {
+                await user.updateDisplayName(name);
+                _firestoreService.createUser(
+                    UserModel(age: age, email: user.email), user.uid);
+                // await _navigationService.navigateTo(Routes.splashViewRoute);
+                await _navigationService.replaceWithTransition(SplashView(),
+                    transitionStyle: Transition.rightToLeft);
+              }
             }
           } else {
             print('registration is not true');
