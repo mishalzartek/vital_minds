@@ -52,6 +52,7 @@ class SettingsPageViewModel extends BaseViewModel implements Initialisable {
   AuthenticationService authenticationService =
       locator<AuthenticationService>();
   String name;
+
   Future<void> themeChange(Color col) async {
     await Themes().changeColors(col);
     await Themes().changeTheme(col);
@@ -190,6 +191,7 @@ class SettingsPageViewModel extends BaseViewModel implements Initialisable {
   SettingsPageViewModel() {
     this.log = getLogger(this.runtimeType.toString());
   }
+
   void deleteProfilePic() async {
     var directory = await getApplicationDocumentsDirectory();
     String path = directory.path;
@@ -213,7 +215,8 @@ class SettingsPageViewModel extends BaseViewModel implements Initialisable {
         authenticationService.user.uid == null) {
       name = " ";
     } else {
-      name = authenticationService.user.displayName.split(" ")[0];
+      name ??= "User";
+      name = authenticationService.user.displayName ?? "".split(" ")[0];
       //name = name = authenticationService.currentUser.name.split(" ")[0];
     }
   }

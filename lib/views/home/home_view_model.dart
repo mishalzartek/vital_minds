@@ -182,7 +182,8 @@ class HomeViewModel extends IndexTrackingViewModel implements Initialisable {
         authenticationService.user.uid == null) {
       name = " ";
     } else {
-      name = authenticationService.user.displayName.split(" ")[0];
+      name??="User";
+      name = authenticationService.user.displayName??"".split(" ")[0];
       //name = name = authenticationService.currentUser.name.split(" ")[0];
     }
     // prefs = await SharedPreferences.getInstance();
